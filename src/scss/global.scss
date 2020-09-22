@@ -1,0 +1,12 @@
+@import "./variables.scss";
+
+html {
+  font-family: $main-font;
+  text-align: center;
+  font-size: 18px;
+}
+
+body {
+  background-color: color(main);
+  color: white;
+}

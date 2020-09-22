@@ -1,0 +1,94 @@
+// ============= FONTS =============
+
+$main-font: "Montserrat", sans-serif;
+$secondary-font: "Fredoka one", sans-serif;
+
+// ============= COLORS =============
+
+$colors: (
+  main: #1e1f25,
+  secondary: #111216,
+  accent: #b6bdff
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+// ============= TRANSITIONS =============
+
+$cbInOut: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+$cbIn: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+$cbOut: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$cbSlowIn: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+$cbSlowInMild: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+$cbSlowOut: cubic-bezier(0.075, 0.82, 0.165, 1);
+
+// ============= MEDIA QUERIES =============
+
+@mixin width1850 {
+  @media (max-width: 1850px) {
+    @content;
+  }
+}
+
+@mixin width1337 {
+  @media (max-width: 1337px) {
+    @content;
+  }
+}
+
+@mixin width1200 {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin width992 {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin width850 {
+  @media (max-width: 850px) {
+    @content;
+  }
+}
+
+@mixin width768 {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin width650 {
+  @media (max-width: 650px) {
+    @content;
+  }
+}
+
+@mixin width576 {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+// --------------- TRANSITION ANIMATIONS ----------------
+
+// -- FADE --
+.page-fade-enter {
+  opacity: 0;
+}
+.page-fade-enter-active {
+  opacity: 1;
+  transition: opacity 0.4s 0.5s;
+}
+
+.page-fade-exit {
+  opacity: 1;
+}
+.page-fade-exit-active {
+  opacity: 0;
+  transition: opacity 0.4s;
+}
