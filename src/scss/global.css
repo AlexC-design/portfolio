@@ -4,8 +4,8 @@
 
 .page-fade-enter-active {
   opacity: 1;
-  -webkit-transition: opacity 0.4s 0.5s;
-  transition: opacity 0.4s 0.5s;
+  -webkit-transition: opacity 0.4s 0.5s !important;
+  transition: opacity 0.4s 0.5s !important;
 }
 
 .page-fade-exit {
@@ -14,14 +14,15 @@
 
 .page-fade-exit-active {
   opacity: 0;
-  -webkit-transition: opacity 0.4s;
-  transition: opacity 0.4s;
+  -webkit-transition: opacity 0.4s !important;
+  transition: opacity 0.4s !important;
 }
 
 html {
   font-family: "Montserrat", sans-serif;
   text-align: center;
   font-size: 18px;
+  overflow-x: hidden;
 }
 
 html * {
@@ -38,6 +39,21 @@ body {
   padding: 150px;
   margin: 0 auto;
   max-width: 1900px;
+}
+
+a {
+  font-weight: bold;
+  color: #b6bdff;
+}
+
+a:hover {
+  -webkit-filter: brightness(110%);
+          filter: brightness(110%);
+}
+
+a:active {
+  -webkit-filter: brightness(150%);
+          filter: brightness(150%);
 }
 
 .accent-color {

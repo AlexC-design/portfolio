@@ -4,6 +4,7 @@ html {
   font-family: $main-font;
   text-align: center;
   font-size: 18px;
+  overflow-x: hidden;
 
   * {
     margin: 0;
@@ -20,6 +21,19 @@ body {
   padding: 150px;
   margin: 0 auto;
   max-width: 1900px;
+}
+
+a {
+  font-weight: bold;
+  color: color(accent);
+
+  &:hover {
+    filter: brightness(110%);
+  }
+
+  &:active {
+    filter: brightness(150%);
+  }
 }
 
 // ============= TEXT =============

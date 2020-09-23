@@ -9,7 +9,7 @@ const HomePage = () => {
       <div className="top-section">
         <div className="description text-left">
           <h1>Alexandru Ciobotaru</h1>
-          <h3 className="accent-color">Web Developer / Designer</h3>
+          <h3 className="accent-color">Web Developer and Designer</h3>
           <br />
           <p>
             Hi!
@@ -22,7 +22,7 @@ const HomePage = () => {
           <p className="accent-color">Have look at some of my work below!</p>
         </div>
         <div className="icons-container">
-          <ToolsIcons />
+          <ToolsIcons color={"accent"}/>
         </div>
       </div>
 

@@ -8,6 +8,7 @@ import {
 } from "../store/state/navbarState";
 import HomePage from "../components/HomePage/HomePage";
 import ProjectPage from "./ProjectPage/ProjectPage";
+import AboutPage from "./AboutPage/AboutPage";
 
 const Routes = ({ location }) => {
   const dispatch = useDispatch();
@@ -28,13 +29,14 @@ const Routes = ({ location }) => {
       <CSSTransition
         key={location.pathname}
         in={true}
-        timeout={1000}
+        timeout={800}
         classNames="page-fade"
       >
         <div>
           <Switch location={location}>
             <Route path="/" exact component={HomePage} />
             <Route path="/project" exact component={ProjectPage} />
+            <Route path="/about" exact component={AboutPage} />
           </Switch>
         </div>
       </CSSTransition>

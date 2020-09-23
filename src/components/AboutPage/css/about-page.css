@@ -1,0 +1,80 @@
+.page-fade-enter {
+  opacity: 0;
+}
+
+.page-fade-enter-active {
+  opacity: 1;
+  -webkit-transition: opacity 0.4s 0.5s !important;
+  transition: opacity 0.4s 0.5s !important;
+}
+
+.page-fade-exit {
+  opacity: 1;
+}
+
+.page-fade-exit-active {
+  opacity: 0;
+  -webkit-transition: opacity 0.4s !important;
+  transition: opacity 0.4s !important;
+}
+
+.about-page .top-side {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.about-page .top-side .profile-picture {
+  width: 400px;
+  height: 400px;
+  border-radius: 2px;
+  border: solid 1px white;
+}
+
+.about-page .top-side .about-text {
+  margin-left: 70px;
+  text-align: left;
+  max-width: 460px;
+}
+
+.about-page .top-side .about-text .subtitle {
+  font-weight: 200;
+  letter-spacing: 5.2px;
+}
+
+.about-page .tools-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.about-page .tools-container .column.code .cols {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.about-page .tools-container .column.code .cols .col-1 {
+  margin-right: 30px;
+}
+
+.about-page .tools-container .column.code .cols .col-2 {
+  margin-left: 30px;
+}
+
+.about-page .tools-container .column.code p {
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+
+.about-page .tools-container .column.design p {
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+/*# sourceMappingURL=about-page.css.map */

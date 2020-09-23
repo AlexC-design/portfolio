@@ -1,6 +1,7 @@
 @import "../../../scss/variables.scss";
 
 .tool-icon {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,6 +39,10 @@
 
     filter: $toBlue;
 
+    &.color-white {
+      filter: invert(100%);
+    }
+
     @include width1337 {
       transform: scale(0.7);
     }
@@ -45,5 +50,19 @@
     @include width650 {
       margin: -10px -10px 0;
     }
+  }
+
+  .glow {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(white, rgba(white, 0), rgba(white, 0), rgba(white, 0), rgba(white, 0));
+    border-radius: 50%;
+    opacity: 0.05;
+
+    position: absolute;
+    top: 60%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
   }
 }

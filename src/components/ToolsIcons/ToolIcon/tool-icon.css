@@ -4,8 +4,8 @@
 
 .page-fade-enter-active {
   opacity: 1;
-  -webkit-transition: opacity 0.4s 0.5s;
-  transition: opacity 0.4s 0.5s;
+  -webkit-transition: opacity 0.4s 0.5s !important;
+  transition: opacity 0.4s 0.5s !important;
 }
 
 .page-fade-exit {
@@ -14,11 +14,12 @@
 
 .page-fade-exit-active {
   opacity: 0;
-  -webkit-transition: opacity 0.4s;
-  transition: opacity 0.4s;
+  -webkit-transition: opacity 0.4s !important;
+  transition: opacity 0.4s !important;
 }
 
 .tool-icon {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -74,6 +75,11 @@
           filter: invert(78%) sepia(35%) saturate(835%) hue-rotate(192deg) brightness(91%) contrast(126%);
 }
 
+.tool-icon img.color-white {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+
 @media (max-width: 1337px) {
   .tool-icon img {
     -webkit-transform: scale(0.7);
@@ -85,5 +91,18 @@
   .tool-icon img {
     margin: -10px -10px 0;
   }
+}
+
+.tool-icon .glow {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(white, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+  border-radius: 50%;
+  opacity: 0.05;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 /*# sourceMappingURL=tool-icon.css.map */

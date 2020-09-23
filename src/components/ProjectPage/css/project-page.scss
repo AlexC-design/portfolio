@@ -1,20 +1,18 @@
-@import '../../../scss/variables.scss';
+@import "../../../scss/variables.scss";
 
 .project-page {
-    padding: 50px 50px 10px;
-    width: calc(100vw - 100px);
-    height: calc(100vh - 60px);
+  padding: 50px 50px 10px;
+  width: calc(100vw - 100px);
+  height: calc(100vh - 60px);
 
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 
-    .carousel {
-        flex: 7;
-        background-color: rgba(orange, 0.2);
-    }
-    
-    .dropdowns {
-        flex: 3;
-        background-color: rgba(orangered, 0.2);
-    }
+  .carousel {
+    flex: 7;
+  }
+
+  .dropdowns {
+    flex: 3;
+  }
 }

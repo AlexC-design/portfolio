@@ -91,7 +91,7 @@ $toBlue: invert(78%) sepia(35%) saturate(835%) hue-rotate(192deg)
 }
 .page-fade-enter-active {
   opacity: 1;
-  transition: opacity 0.4s 0.5s;
+  transition: opacity 0.4s 0.5s !important;
 }
 
 .page-fade-exit {
@@ -99,5 +99,5 @@ $toBlue: invert(78%) sepia(35%) saturate(835%) hue-rotate(192deg)
 }
 .page-fade-exit-active {
   opacity: 0;
-  transition: opacity 0.4s;
+  transition: opacity 0.4s !important;
 }

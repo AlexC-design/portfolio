@@ -1,0 +1,58 @@
+@import "../../../scss/variables.scss";
+
+.about-page {
+  .top-side {
+    display: flex;
+    justify-content: center;
+
+    .profile-picture {
+      width: 400px;
+      height: 400px;
+      border-radius: 2px;
+      border: solid 1px white;
+    }
+
+    .about-text {
+      margin-left: 70px;
+      text-align: left;
+      max-width: 460px;
+
+      .subtitle {
+        font-weight: 200;
+        letter-spacing: 5.2px;
+      }
+    }
+  }
+  .tools-container {
+    display: flex;
+    justify-content: space-between;
+
+    .column {
+      &.main {
+      }
+      &.code {
+        .cols {
+          display: flex;
+
+          .col-1 {
+            margin-right: 30px;
+          }
+          .col-2 {
+            margin-left: 30px;
+          }
+        }
+
+        p {
+          font-size: 22px;
+          margin-bottom: 30px;
+        }
+      }
+      &.design {
+        p {
+          font-size: 22px;
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+}

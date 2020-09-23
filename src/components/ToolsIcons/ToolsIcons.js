@@ -4,7 +4,7 @@ import { tools } from "./tools";
 
 import "./tools-icons.css";
 
-export const ToolsIcons = () => {
+export const ToolsIcons = ({ color }) => {
   return (
     <div className="tools-icons-container">
       {tools.map(tool => (
@@ -12,6 +12,7 @@ export const ToolsIcons = () => {
           icon={tool.icon}
           name={tool.name}
           key={tool.name}
+          color={color}
         />
       ))}
     </div>
