@@ -24,6 +24,9 @@ $cbSlowIn: cubic-bezier(0.6, 0.04, 0.98, 0.335);
 $cbSlowInMild: cubic-bezier(0.785, 0.135, 0.15, 0.86);
 $cbSlowOut: cubic-bezier(0.075, 0.82, 0.165, 1);
 
+$main-transition: all 0.4s $cbInOut;
+$secondary-transition: all 0.4s $cbOut;
+
 // ============= MEDIA QUERIES =============
 
 @mixin width1850 {
@@ -74,7 +77,13 @@ $cbSlowOut: cubic-bezier(0.075, 0.82, 0.165, 1);
   }
 }
 
-// --------------- TRANSITION ANIMATIONS ----------------
+// ============= FILTERS =============
+
+$toBlue: invert(78%) sepia(35%) saturate(835%) hue-rotate(192deg)
+  brightness(91%) contrast(126%);
+
+
+// ============= TRANSITION ANIMATIONS =============
 
 // -- FADE --
 .page-fade-enter {

@@ -1,1 +1,13 @@
 @import '../../../scss/variables.scss';
+
+
+.top-section {
+    padding: 100px;
+    display: grid;
+    grid-template-columns: 40% 60% ;
+
+    .description {
+        margin-right: 40px;
+    }
+
+}

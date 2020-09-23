@@ -17,4 +17,16 @@
   -webkit-transition: opacity 0.4s;
   transition: opacity 0.4s;
 }
+
+.top-section {
+  padding: 100px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 40% 60%;
+      grid-template-columns: 40% 60%;
+}
+
+.top-section .description {
+  margin-right: 40px;
+}
 /*# sourceMappingURL=home-page.css.map */

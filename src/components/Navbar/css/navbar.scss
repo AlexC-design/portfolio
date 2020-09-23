@@ -1,1 +1,60 @@
-@import '../../../scss/variables.scss';
+@import "../../../scss/variables.scss";
+
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: color(secondary);
+  width: calc(100% - 140px);
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 70px;
+  z-index: 20;
+
+  transition: $main-transition;
+
+  :first-child {
+    margin-right: auto !important;
+  }
+
+  .nav-link {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    margin: 0 20px;
+
+    &.active {
+      font-weight: bold;
+    }
+
+    .text {
+      position: relative;
+      z-index: 2;
+    }
+
+    .triangle {
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      z-index: 1;
+
+      img {
+        filter: $toBlue;
+        width: 20px;
+      }
+    }
+  }
+
+  &.small {
+    height: 50px;
+    opacity: 0.95;
+  }
+
+  &.smaller {
+    height: 40px;
+    background-color: rgba(color(secondary), 0.5);
+  }
+}

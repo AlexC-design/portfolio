@@ -1,1 +1,88 @@
-/* No CSS *//*# sourceMappingURL=navbar.css.map */
+.page-fade-enter {
+  opacity: 0;
+}
+
+.page-fade-enter-active {
+  opacity: 1;
+  -webkit-transition: opacity 0.4s 0.5s;
+  transition: opacity 0.4s 0.5s;
+}
+
+.page-fade-exit {
+  opacity: 1;
+}
+
+.page-fade-exit-active {
+  opacity: 0;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #111216;
+  width: calc(100% - 140px);
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 70px;
+  z-index: 20;
+  -webkit-transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.navbar-container :first-child {
+  margin-right: auto !important;
+}
+
+.navbar-container .nav-link {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 20px;
+}
+
+.navbar-container .nav-link.active {
+  font-weight: bold;
+}
+
+.navbar-container .nav-link .text {
+  position: relative;
+  z-index: 2;
+}
+
+.navbar-container .nav-link .triangle {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  z-index: 1;
+}
+
+.navbar-container .nav-link .triangle img {
+  -webkit-filter: invert(78%) sepia(35%) saturate(835%) hue-rotate(192deg) brightness(91%) contrast(126%);
+          filter: invert(78%) sepia(35%) saturate(835%) hue-rotate(192deg) brightness(91%) contrast(126%);
+  width: 20px;
+}
+
+.navbar-container.small {
+  height: 50px;
+  opacity: 0.95;
+}
+
+.navbar-container.smaller {
+  height: 40px;
+  background-color: rgba(17, 18, 22, 0.5);
+}
+/*# sourceMappingURL=navbar.css.map */

@@ -1,7 +1,13 @@
-import { SET_NAVBAR_SMALL_ON, SET_NAVBAR_SMALL_OFF } from "./index";
+import {
+  SET_NAVBAR_SMALL_ON,
+  SET_NAVBAR_SMALL_OFF,
+  SET_NAVBAR_SMALLER_ON,
+  SET_NAVBAR_SMALLER_OFF
+} from "./index";
 
 const initialState = {
-  navbarSmall: false
+  navbarSmall: false,
+  navbarSmaller: false
 };
 
 export default (state = initialState, action) => {
@@ -15,6 +21,16 @@ export default (state = initialState, action) => {
       return {
         ...state,
         navbarSmall: false
+      };
+    case SET_NAVBAR_SMALLER_ON:
+      return {
+        ...state,
+        navbarSmaller: true
+      };
+    case SET_NAVBAR_SMALLER_OFF:
+      return {
+        ...state,
+        navbarSmaller: false
       };
 
     default:

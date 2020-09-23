@@ -1,0 +1,22 @@
+@import "../../scss/variables.scss";
+
+.tools-icons-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  animation: fade-in 1s ease-out forwards;
+
+  @include width1200 {
+    margin-top: 50px;
+  }
+
+  @include width600 {
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    margin-top: 25px;
+
+    div:last-child {
+      display: none;
+    }
+  }
+}

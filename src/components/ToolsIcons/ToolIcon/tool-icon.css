@@ -1,0 +1,89 @@
+.page-fade-enter {
+  opacity: 0;
+}
+
+.page-fade-enter-active {
+  opacity: 1;
+  -webkit-transition: opacity 0.4s 0.5s;
+  transition: opacity 0.4s 0.5s;
+}
+
+.page-fade-exit {
+  opacity: 1;
+}
+
+.page-fade-exit-active {
+  opacity: 0;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+
+.tool-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1337px) {
+  .tool-icon {
+    margin: 0;
+  }
+}
+
+.tool-icon .tool-name {
+  height: 35px;
+  max-width: 80px;
+  font-size: 14px;
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  color: white;
+  padding-bottom: 10px;
+}
+
+.tool-icon .tool-name.blue {
+  font-weight: bold;
+}
+
+.tool-icon img {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  -webkit-transition: -webkit-filter 0.4s ease-out;
+  transition: -webkit-filter 0.4s ease-out;
+  transition: filter 0.4s ease-out;
+  transition: filter 0.4s ease-out, -webkit-filter 0.4s ease-out;
+  -webkit-filter: invert(78%) sepia(35%) saturate(835%) hue-rotate(192deg) brightness(91%) contrast(126%);
+          filter: invert(78%) sepia(35%) saturate(835%) hue-rotate(192deg) brightness(91%) contrast(126%);
+}
+
+@media (max-width: 1337px) {
+  .tool-icon img {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+  }
+}
+
+@media (max-width: 650px) {
+  .tool-icon img {
+    margin: -10px -10px 0;
+  }
+}
+/*# sourceMappingURL=tool-icon.css.map */
