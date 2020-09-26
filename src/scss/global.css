@@ -80,6 +80,10 @@ a:active {
   font-size: 0.6em;
 }
 
+.text-medium {
+  font-size: 0.8em;
+}
+
 .text-thin {
   font-weight: 200;
 }
@@ -137,6 +141,11 @@ a:active {
 .pop-in {
   -webkit-animation: pop-in 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
           animation: pop-in 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.pop-in-delayed {
+  -webkit-animation: pop-in 0.4s 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+          animation: pop-in 0.4s 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
 @-webkit-keyframes pop-in {

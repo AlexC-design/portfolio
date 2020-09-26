@@ -57,6 +57,9 @@ a {
 .text-small {
   font-size: 0.6em;
 }
+.text-medium {
+  font-size: 0.8em;
+}
 .text-thin {
   font-weight: 200;
 }
@@ -96,6 +99,9 @@ a {
 
 .pop-in {
   animation: pop-in 0.4s $cbOut forwards;
+}
+.pop-in-delayed {
+  animation: pop-in 0.4s 0.8s $cbOut forwards;
 }
 
 @keyframes pop-in {

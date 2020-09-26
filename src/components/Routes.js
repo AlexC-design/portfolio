@@ -9,6 +9,7 @@ import {
 import HomePage from "../components/HomePage/HomePage";
 import ProjectPage from "./ProjectPage/ProjectPage";
 import AboutPage from "./AboutPage/AboutPage";
+import ContactPage from "./ContactPage/ContactPage";
 
 const Routes = ({ location }) => {
   const dispatch = useDispatch();
@@ -37,6 +38,7 @@ const Routes = ({ location }) => {
             <Route path="/" exact component={HomePage} />
             <Route path="/project" exact component={ProjectPage} />
             <Route path="/about" exact component={AboutPage} />
+            <Route path="/contact" exact component={ContactPage} />
           </Switch>
         </div>
       </CSSTransition>
