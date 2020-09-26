@@ -30,6 +30,8 @@ const Navbar = ({ location }) => {
   useEffect(() => {
     window.addEventListener("scroll", e => handleScroll(e));
 
+    window.scrollTo({ top: 0 });
+
     return () => {
       window.removeEventListener("scroll", e => handleScroll(e));
     };

@@ -7,7 +7,7 @@ export const ToolIcon = ({ icon, name, color }) => {
     <div className="tool-icon">
       <p className="tool-name">{name}</p>
       <img className={`color-${color}`} src={icon} alt={`${icon} icon`} />
-      <div className="glow" />
+      {/* <div className="glow" /> */}
     </div>
   );
 };

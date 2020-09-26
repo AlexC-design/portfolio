@@ -18,9 +18,19 @@ body {
 }
 
 .page {
-  padding: 150px;
+}
+
+.container {
+  padding: 100px 50px;
   margin: 0 auto;
   max-width: 1900px;
+
+  @include width1337 {
+    padding: 100px 50px;
+  }
+  @include width850 {
+    padding: 100px 20px;
+  }
 }
 
 a {

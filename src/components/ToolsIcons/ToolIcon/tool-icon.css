@@ -34,12 +34,6 @@
   margin-bottom: 20px;
 }
 
-@media (max-width: 1337px) {
-  .tool-icon {
-    margin: 0;
-  }
-}
-
 .tool-icon .tool-name {
   height: 35px;
   max-width: 80px;
@@ -80,16 +74,11 @@
           filter: invert(100%);
 }
 
-@media (max-width: 1337px) {
-  .tool-icon img {
-    -webkit-transform: scale(0.7);
-            transform: scale(0.7);
-  }
-}
-
-@media (max-width: 650px) {
+@media (max-width: 576px) {
   .tool-icon img {
     margin: -10px -10px 0;
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
   }
 }
 
@@ -104,5 +93,15 @@
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+@media (max-width: 1337px) {
+  .tool-icon {
+    margin: -20px 0 0;
+  }
+  .tool-icon .tool-name {
+    padding-bottom: 0;
+    padding-top: 20px;
+  }
 }
 /*# sourceMappingURL=tool-icon.css.map */

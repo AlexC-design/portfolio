@@ -3,10 +3,13 @@
 .project-card {
   display: flex;
   flex-direction: row;
+  margin: 100px 0;
+
+  // opacity: 0.5;
 
   img {
     flex: 7;
-    margin-right: 40px;
+    margin: 0 40px;
     background-color: black;
     height: 600px;
     border-radius: 20px;
@@ -22,5 +25,13 @@
 
   .project-description {
     flex: 3;
+  }
+
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+
+    .project-description {
+      text-align: right;
+    }
   }
 }

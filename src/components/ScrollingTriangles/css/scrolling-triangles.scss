@@ -1,0 +1,37 @@
+@import "../../../scss/variables.scss";
+
+.triangles-container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+
+  z-index: -10;
+
+  .triangle {
+    position: absolute;
+    opacity: 0.04;
+
+    filter: $toBlue;
+    transition: all 10s cubic-bezier(0.215, 0.610, 0.355, 1);
+
+    &.largest {
+      width: 800px;
+      left: 50%;
+    }
+    &.big {
+      width: 500px;
+      left: 20%;
+    }
+    &.medium {
+      width: 300px;
+      left: 10%;
+    }
+    &.small {
+      width: 100px;
+      left: 30%;
+    }
+  }
+}

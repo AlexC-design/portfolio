@@ -4,8 +4,8 @@
 
 .page-fade-enter-active {
   opacity: 1;
-  -webkit-transition: opacity 0.4s 0.5s;
-  transition: opacity 0.4s 0.5s;
+  -webkit-transition: opacity 0.4s 0.5s !important;
+  transition: opacity 0.4s 0.5s !important;
 }
 
 .page-fade-exit {
@@ -14,8 +14,8 @@
 
 .page-fade-exit-active {
   opacity: 0;
-  -webkit-transition: opacity 0.4s;
-  transition: opacity 0.4s;
+  -webkit-transition: opacity 0.4s !important;
+  transition: opacity 0.4s !important;
 }
 
 .project-card {
@@ -26,13 +26,14 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  margin: 100px 0;
 }
 
 .project-card img {
   -webkit-box-flex: 7;
       -ms-flex: 7;
           flex: 7;
-  margin-right: 40px;
+  margin: 0 40px;
   background-color: black;
   height: 600px;
   border-radius: 20px;
@@ -52,5 +53,16 @@
   -webkit-box-flex: 3;
       -ms-flex: 3;
           flex: 3;
+}
+
+.project-card:nth-child(even) {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.project-card:nth-child(even) .project-description {
+  text-align: right;
 }
 /*# sourceMappingURL=project-card.css.map */

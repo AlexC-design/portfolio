@@ -1,0 +1,59 @@
+.page-fade-enter {
+  opacity: 0;
+}
+
+.page-fade-enter-active {
+  opacity: 1;
+  -webkit-transition: opacity 0.4s 0.5s !important;
+  transition: opacity 0.4s 0.5s !important;
+}
+
+.page-fade-exit {
+  opacity: 1;
+}
+
+.page-fade-exit-active {
+  opacity: 0;
+  -webkit-transition: opacity 0.4s !important;
+  transition: opacity 0.4s !important;
+}
+
+.triangles-container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: -10;
+}
+
+.triangles-container .triangle {
+  position: absolute;
+  opacity: 0.04;
+  -webkit-filter: invert(78%) sepia(35%) saturate(835%) hue-rotate(192deg) brightness(91%) contrast(126%);
+          filter: invert(78%) sepia(35%) saturate(835%) hue-rotate(192deg) brightness(91%) contrast(126%);
+  -webkit-transition: all 10s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 10s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.triangles-container .triangle.largest {
+  width: 800px;
+  left: 50%;
+}
+
+.triangles-container .triangle.big {
+  width: 500px;
+  left: 20%;
+}
+
+.triangles-container .triangle.medium {
+  width: 300px;
+  left: 10%;
+}
+
+.triangles-container .triangle.small {
+  width: 100px;
+  left: 30%;
+}
+/*# sourceMappingURL=scrolling-triangles.css.map */

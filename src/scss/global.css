@@ -35,10 +35,22 @@ body {
   color: white;
 }
 
-.page {
-  padding: 150px;
+.container {
+  padding: 100px 50px;
   margin: 0 auto;
   max-width: 1900px;
+}
+
+@media (max-width: 1337px) {
+  .container {
+    padding: 100px 50px;
+  }
+}
+
+@media (max-width: 850px) {
+  .container {
+    padding: 100px 20px;
+  }
 }
 
 a {

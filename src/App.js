@@ -5,6 +5,7 @@ import { store } from "./store/configureStore";
 import { LastLocationProvider } from "react-router-last-location";
 import Navbar from "./components/Navbar/Navbar";
 import Routes from "./components/Routes";
+import ScrollingTriangles from "./components/ScrollingTriangles/ScrollingTriangles";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <div className="App">
         <HashRouter basename="/">
           <LastLocationProvider>
+            <ScrollingTriangles />
             <Navbar />
             <Routes />
           </LastLocationProvider>

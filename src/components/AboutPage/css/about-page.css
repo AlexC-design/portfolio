@@ -25,6 +25,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-top: 100px;
 }
 
 .about-page .top-side .profile-picture {
@@ -45,6 +46,53 @@
   letter-spacing: 5.2px;
 }
 
+@media (max-width: 992px) {
+  .about-page .top-side {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .about-page .top-side .about-text {
+    text-align: center;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-page .top-side .profile-picture {
+    width: 300px;
+    height: 300px;
+  }
+  .about-page .top-side .my-name {
+    font-size: 30px;
+  }
+  .about-page .top-side .about-text .subtitle {
+    letter-spacing: 2.5px;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-page .top-side .profile-picture {
+    width: 250px;
+    height: 250px;
+  }
+  .about-page .top-side .my-name {
+    font-size: 25px;
+  }
+  .about-page .top-side .about-text .subtitle {
+    letter-spacing: 1.5px;
+    font-size: 16px;
+  }
+}
+
 .about-page .tools-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -52,6 +100,8 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-bottom: 50px;
+  padding: 0 50px;
 }
 
 .about-page .tools-container .column.code .cols {
@@ -76,5 +126,63 @@
 .about-page .tools-container .column.design p {
   font-size: 22px;
   margin-bottom: 30px;
+}
+
+@media (max-width: 1337px) {
+  .about-page .tools-container .column .accent-color {
+    margin-top: 50px;
+  }
+  .about-page .tools-container .column.code .cols {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .about-page .tools-container .column.code .cols .col-1 {
+    margin: 0;
+  }
+  .about-page .tools-container .column.code .cols .col-2 {
+    margin: 0;
+  }
+}
+
+@media (max-width: 1850px) {
+  .about-page .tools-container {
+    padding: 0;
+  }
+}
+
+@media (max-width: 1337px) {
+  .about-page .tools-container {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 992px) {
+  .about-page .tools-container {
+    padding: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media (max-width: 992px) {
+  .about-page .title {
+    margin-bottom: 0;
+  }
 }
 /*# sourceMappingURL=about-page.css.map */

@@ -1,8 +1,32 @@
+.page-fade-enter {
+  opacity: 0;
+}
+
+.page-fade-enter-active {
+  opacity: 1;
+  -webkit-transition: opacity 0.4s 0.5s !important;
+  transition: opacity 0.4s 0.5s !important;
+}
+
+.page-fade-exit {
+  opacity: 1;
+}
+
+.page-fade-exit-active {
+  opacity: 0;
+  -webkit-transition: opacity 0.4s !important;
+  transition: opacity 0.4s !important;
+}
+
 .tools-icons-container {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[5];
       grid-template-columns: repeat(5, 1fr);
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin: 0 auto;
   -webkit-animation: fade-in 1s ease-out forwards;
           animation: fade-in 1s ease-out forwards;
 }
@@ -13,15 +37,22 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1337px) {
   .tools-icons-container {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
     width: 100%;
     margin-top: 25px;
   }
-  .tools-icons-container div:last-child {
+  .tools-icons-container .tool-icon:last-child {
     display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .tools-icons-container {
+    max-width: 100%;
+    margin-left: -20px;
   }
 }
 /*# sourceMappingURL=tools-icons.css.map */
