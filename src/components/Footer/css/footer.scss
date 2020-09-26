@@ -31,4 +31,41 @@
       }
     }
   }
+
+  @include width1337 {
+    .text {
+      margin: 0 50px 0;
+    }
+    .icons {
+      margin: 0 50px 0;
+    }
+  }
+  @include width576 {
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    height: 300px;
+
+    .text {
+      margin: 10px;
+      * {
+        font-size: 18px;
+        text-align: center;
+      }
+    }
+
+    .icons {
+      flex-direction: row;
+    
+      .link-icon {
+        margin: 10px;
+
+      }
+
+    }
+
+
+  }
 }
