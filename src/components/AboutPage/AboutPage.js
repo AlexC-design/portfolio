@@ -29,6 +29,10 @@ const AboutPage = () => {
     "Unreal Engine 4"
   ];
 
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
+
   return (
     <div className="page about-page">
       <div className="container">

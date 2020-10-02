@@ -106,6 +106,36 @@ a:active {
   margin: 10px 0;
 }
 
+@media (max-width: 1200px) {
+  .hide-mobile {
+    display: none;
+  }
+}
+
+.show-mobile {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .show-mobile {
+    display: block;
+  }
+}
+
+.CTA {
+  margin: 40px auto 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  color: #111216;
+  background-color: #b6bdff;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 50px -10px #b6bdff;
+          box-shadow: 0px 0px 50px -10px #b6bdff;
+}
+
 .spin {
   -webkit-animation: spin 2s linear infinite;
           animation: spin 2s linear infinite;

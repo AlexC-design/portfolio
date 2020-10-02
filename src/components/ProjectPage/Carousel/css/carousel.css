@@ -17,4 +17,182 @@
   -webkit-transition: opacity 0.4s !important;
   transition: opacity 0.4s !important;
 }
+
+.carousel {
+  width: 65%;
+  max-height: 100%;
+  position: relative;
+}
+
+.carousel .image-container {
+  position: relative;
+  background-color: #0d0d10;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 85vh;
+  max-height: 1200px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px 20px 0 20px;
+  z-index: 1;
+}
+
+.carousel .image-container .carousel-image {
+  padding: 20px;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  max-width: calc(100% - 40px);
+  max-height: calc(100% - 40px);
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.carousel .image-container .carousel-image.active {
+  opacity: 1;
+}
+
+.carousel .controls {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.carousel .controls * {
+  -webkit-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.carousel .controls .dot {
+  width: 5px;
+  height: 5px;
+  min-width: 5px;
+  min-height: 5px;
+  background-color: #b6bdff;
+  border-radius: 1000px;
+  opacity: 0.2;
+  margin: 0 10px;
+  padding: 10px;
+  background-clip: content-box;
+  cursor: pointer;
+}
+
+.carousel .controls .dot:hover {
+  opacity: 0.5;
+}
+
+.carousel .controls .dot.active {
+  cursor: default;
+  pointer-events: none;
+  opacity: 1 !important;
+  background-color: #b6bdff;
+}
+
+.carousel .controls .arrow {
+  -webkit-filter: invert(78%) sepia(35%) saturate(835%) hue-rotate(192deg) brightness(91%) contrast(126%);
+          filter: invert(78%) sepia(35%) saturate(835%) hue-rotate(192deg) brightness(91%) contrast(126%);
+  margin: 0 50px;
+  width: 13px;
+  padding: 10px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.carousel .controls .arrow.left {
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
+.carousel .controls .arrow:hover {
+  opacity: 1;
+}
+
+.carousel .controls .pause-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 40px;
+  background-color: rgba(17, 18, 22, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 0 5px 5px;
+  cursor: pointer;
+}
+
+.carousel .controls .pause-button:hover {
+  background-color: #111216;
+}
+
+.carousel .controls .pause-button img {
+  width: 20px;
+  -webkit-filter: invert(78%) sepia(35%) saturate(835%) hue-rotate(192deg) brightness(91%) contrast(126%);
+          filter: invert(78%) sepia(35%) saturate(835%) hue-rotate(192deg) brightness(91%) contrast(126%);
+}
+
+@media (max-width: 1337px) {
+  .carousel .controls .dot {
+    margin: 0;
+  }
+  .carousel .controls .arrow {
+    margin: 0 20px;
+  }
+}
+
+@media (max-width: 850px) {
+  .carousel {
+    width: 100%;
+    max-height: 50vh;
+    border-radius: 0 0 20px 20px;
+  }
+  .carousel .image-container {
+    border-radius: 0 0 20px 20px;
+    height: 45vh;
+    max-height: 45vh;
+  }
+  .carousel .controls {
+    height: 100%;
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  .carousel .controls .dot {
+    display: none;
+    pointer-events: none;
+  }
+  .carousel .controls .pause-button {
+    bottom: 5px;
+    right: 5px;
+    top: unset;
+    border-radius: 5px;
+  }
+}
 /*# sourceMappingURL=carousel.css.map */

@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Footer from "../Footer/Footer";
 import ProjectCard from "../ProjectCard/ProjectCard";
 import { ToolsIcons } from "../ToolsIcons/ToolsIcons";
+import movieClusterTmb from "../../assets/images/tmbs/movie-cluster-tmb.jpg";
 import "./css/home-page.css";
 
 const HomePage = () => {
@@ -31,7 +32,7 @@ const HomePage = () => {
         <h1 className="title">Projects</h1>
 
         <div className="projects-container">
-          <ProjectCard />
+          <ProjectCard img={movieClusterTmb} />
           <ProjectCard />
           <ProjectCard />
           <ProjectCard />

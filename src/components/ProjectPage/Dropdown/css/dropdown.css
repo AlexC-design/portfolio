@@ -20,7 +20,7 @@
 
 .dropdown {
   background-color: #111216;
-  margin: 5px;
+  margin: 0 5px 10px;
   border-radius: 20px;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
@@ -80,5 +80,20 @@
 
 .dropdown.open .dropdown-body .dropdown-body-content {
   opacity: 1;
+}
+
+@media (max-width: 1337px) {
+  .dropdown .dropdown-header {
+    font-size: 16px;
+  }
+  .dropdown .dropdown-body {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 850px) {
+  .dropdown {
+    margin: 5px 0;
+  }
 }
 /*# sourceMappingURL=dropdown.css.map */

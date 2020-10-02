@@ -1,5 +1,165 @@
-@import '../../../../scss/variables.scss';
+@import "../../../../scss/variables.scss";
 
 .carousel {
+  width: 65%;
+  max-height: 100%;
+  position: relative;
+
+  .image-container {
+    position: relative;
+    background-color: darken(color(secondary), 2);
+    object-fit: cover;
+    height: 85vh;
+    max-height: 1200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px 20px 0 20px;
+
+    z-index: 1;
+
+    .carousel-image {
+      padding: 20px;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      max-width: calc(100% - 40px);
+      max-height: calc(100% - 40px);
+      object-fit: cover;
+      opacity: 0;
+
+      transition: all 0.4s ease-out;
+      transform: translateX(-50%);
+
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+
+  .controls {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: $secondary-transition;
+
+    * {
+      transition: $secondary-transition;
+    }
+
+    .dot {
+      width: 5px;
+      height: 5px;
+      min-width: 5px;
+      min-height: 5px;
+      background-color: color(accent);
+      border-radius: 1000px;
+      opacity: 0.2;
+      margin: 0 10px;
+      padding: 10px;
+      background-clip: content-box;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.5;
+      }
+
+      &.active {
+        cursor: default;
+        pointer-events: none;
+        opacity: 1 !important;
+        background-color: color(accent);
+      }
+    }
+
+    .arrow {
+      filter: $toBlue;
+      margin: 0 50px;
+      width: 13px;
+      padding: 10px;
+      cursor: pointer;
+      opacity: 0.8;
+
+      &.left {
+        transform: scaleX(-1);
+      }
+      &.right {
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .pause-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 60px;
+      height: 40px;
+      background-color: rgba(color(secondary), 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0 5px 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba(color(secondary), 1);
+      }
+
+      img {
+        width: 20px;
+        filter: $toBlue;
+      }
+    }
+  }
+
+  @include width1337 {
+    .controls {
+      .dot {
+        margin: 0;
+      }
+      .arrow {
+        margin: 0 20px;
+      }
+    }
+  }
+
+  @include width850 {
+    width: 100%;
+    max-height: 50vh;
+    border-radius: 0 0 20px 20px;
     
+    .image-container {
+      border-radius: 0 0 20px 20px;
+      height: 45vh;
+      max-height: 45vh;
+    }
+
+    .controls {
+      height: 100%;
+      position: absolute;
+      z-index: 3;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      justify-content: space-between;
+
+      transform: translate(-50%, -50%);
+
+      .dot {
+        display: none;
+        pointer-events: none;
+      }
+
+      .pause-button {
+        bottom: 5px;
+        right: 5px;
+        top: unset;
+        border-radius: 5px;
+      }
+    }
+  }
 }

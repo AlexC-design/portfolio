@@ -10,6 +10,7 @@ import "./css/navbar.css";
 
 const Navbar = ({ location, history }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [onProjects, setOnProjects] = useState(false);
 
   const dispatch = useDispatch();
   const { navbarSmaller, navbarSmall } = useSelector(state => ({
@@ -18,16 +19,26 @@ const Navbar = ({ location, history }) => {
   }));
 
   const handleScroll = e => {
-    if (
-      location.pathname !== "/project" &&
-      window.scrollY > 100 &&
-      !navbarSmall
-    ) {
+    if (location.pathname !== "/project" && window.scrollY > 100) {
       dispatch(setNavbarSmallOn());
     } else if (window.scrollY <= 100) {
       dispatch(setNavbarSmallOff());
     }
   };
+
+  const handleProjectScroll = e => {
+    if (location.pathname === "/") {
+      if (window.scrollY > 265) {
+        setOnProjects(true);
+      } else if (window.scrollY < 265) {
+        setOnProjects(false);
+      }
+    }
+  };
+
+  useEffect(() => {
+    console.log("updating");
+  });
 
   const handleProjectsClick = () => {
     setMobileOpen(false);
@@ -36,7 +47,6 @@ const Navbar = ({ location, history }) => {
       history.push("/");
     }
     setTimeout(() => {
-      // window.scrollTo({ top: 200, behavior: "smooth" });
       document.querySelector(".title").scrollIntoView({ behavior: "smooth" });
     }, 0);
   };
@@ -63,7 +73,25 @@ const Navbar = ({ location, history }) => {
       window.removeEventListener("scroll", e => handleScroll(e));
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [location]);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", e => handleProjectScroll(e));
+    console.log("ADDING");
+    if (location.pathname === "/") {
+      console.log(location.pathname);
+      if (window.scrollY >= 265 && !onProjects) {
+        setOnProjects(true);
+      } else if (window.scrollY < 265 && onProjects) {
+        setOnProjects(false);
+      }
+    }
+
+    return () => {
+      window.removeEventListener("scroll", e => handleProjectScroll(e));
+      console.log("REMOVING");
+    };
+  }, []);
 
   return (
     <div
@@ -73,11 +101,13 @@ const Navbar = ({ location, history }) => {
     >
       <Link
         onClick={handleHomeClick}
-        className={`nav-link ${location.pathname === "/" ? "active" : ""}`}
+        className={`nav-link ${
+          location.pathname === "/" && !onProjects ? "active" : ""
+        }`}
       >
         <div className="text">Home</div>
-        {location.pathname === "/" && (
-          <div className="triangle pop-in">
+        {location.pathname === "/" && !onProjects && (
+          <div className="triangle pop-in-delayed">
             <img src={triangle} alt="" className="spin-slow" />
           </div>
         )}
@@ -85,12 +115,12 @@ const Navbar = ({ location, history }) => {
       <Link
         onClick={handleProjectsClick}
         className={`nav-link ${
-          location.pathname === "/projects" ? "active" : ""
+          location.pathname === "/" && onProjects ? "active" : ""
         }`}
       >
         <div className="text">Projects</div>
-        {location.pathname === "/projects" && (
-          <div className="triangle pop-in">
+        {location.pathname === "/" && onProjects && (
+          <div className="triangle pop-in-delayed">
             <img src={triangle} alt="" className="spin-slow" />
           </div>
         )}
@@ -101,7 +131,7 @@ const Navbar = ({ location, history }) => {
       >
         <div className="text">About</div>
         {location.pathname === "/about" && (
-          <div className="triangle pop-in">
+          <div className="triangle pop-in-delayed">
             <img src={triangle} alt="" className="spin-slow" />
           </div>
         )}
@@ -114,7 +144,7 @@ const Navbar = ({ location, history }) => {
       >
         <div className="text">Contact</div>
         {location.pathname === "/contact" && (
-          <div className="triangle pop-in">
+          <div className="triangle pop-in-delayed">
             <img src={triangle} alt="" className="spin-slow" />
           </div>
         )}

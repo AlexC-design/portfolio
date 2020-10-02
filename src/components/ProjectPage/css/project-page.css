@@ -19,9 +19,14 @@
 }
 
 .project-page {
+  position: relative;
   padding: 50px 50px 10px;
   width: calc(100vw - 100px);
   height: calc(100vh - 60px);
+  max-width: 1920px;
+  max-height: 1500px;
+  margin: 0 auto;
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,15 +36,171 @@
           flex-direction: row;
 }
 
-.project-page .carousel {
-  -webkit-box-flex: 7;
-      -ms-flex: 7;
-          flex: 7;
+.project-page .dropdowns {
+  position: relative;
+  z-index: 2;
+  width: 35%;
 }
 
-.project-page .dropdowns {
-  -webkit-box-flex: 3;
-      -ms-flex: 3;
-          flex: 3;
+.project-page .project-buttons {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  width: 30%;
+  z-index: 2;
+  -webkit-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.project-page .project-buttons * {
+  -webkit-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.project-page .project-buttons .project-name {
+  display: none;
+  pointer-events: none;
+}
+
+.project-page .project-buttons .button {
+  margin: 0 10px;
+  width: 200px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.project-page .project-buttons .button .arrow {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+  margin: 0 10px;
+  opacity: 0.5;
+  width: 10px;
+}
+
+.project-page .project-buttons .button .arrow.left {
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+  margin-left: 20px;
+}
+
+.project-page .project-buttons .button .arrow.right {
+  margin-right: 20px;
+}
+
+.project-page .project-buttons .button.prev {
+  background-color: rgba(17, 18, 22, 0.5);
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.project-page .project-buttons .button.next {
+  height: 60px;
+  background-color: #111216;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.project-page .project-buttons .button:hover {
+  background-color: #111216;
+}
+
+.project-page .project-buttons .button:hover .arrow {
+  opacity: 1;
+}
+
+@media (max-width: 1337px) {
+  .project-page {
+    padding: 50px 10px 10px;
+    width: calc(100vw - 20px);
+  }
+  .project-page .project-buttons {
+    right: 10px;
+  }
+  .project-page .project-buttons .button {
+    margin: 0 5px;
+  }
+  .project-page .project-buttons .button .text {
+    font-size: 12px;
+  }
+  .project-page .project-buttons .button .arrow {
+    margin: 0 10px !important;
+  }
+}
+
+@media (max-width: 850px) {
+  .project-page {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 50px 0 0;
+    height: calc(100vh - 50px);
+  }
+  .project-page .dropdowns {
+    width: 100%;
+  }
+  .project-page .project-buttons {
+    width: unset;
+    z-index: 100;
+    margin: 0 auto;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    top: 0;
+    left: 50%;
+    right: unset;
+    bottom: unset;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  .project-page .project-buttons .project-name {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 14px;
+    font-weight: bold;
+    width: 200px;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  .project-page .project-buttons .button {
+    width: 200px;
+  }
+  .project-page .project-buttons .button .text {
+    display: none;
+  }
+  .project-page .project-buttons .button.next {
+    background-color: rgba(0, 0, 0, 0);
+    height: 50px;
+  }
+  .project-page .project-buttons .button.prev {
+    background-color: rgba(0, 0, 0, 0);
+    height: 50px;
+  }
+}
+
+@media (max-width: 576px) {
+  .project-page .project-buttons .button {
+    width: 100px;
+  }
 }
 /*# sourceMappingURL=project-page.css.map */

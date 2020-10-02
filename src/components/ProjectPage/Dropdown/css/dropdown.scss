@@ -2,7 +2,7 @@
 
 .dropdown {
   background-color: color(secondary);
-  margin: 5px;
+  margin: 0 5px 10px;
   border-radius: 20px;
 
   transition: all 0.5s ease-in-out;
@@ -46,9 +46,9 @@
     }
 
     .dropdown-header {
-        .dropdown-arrow {
-            transform: rotate(180deg);
-        }
+      .dropdown-arrow {
+        transform: rotate(180deg);
+      }
     }
 
     .dropdown-body {
@@ -56,5 +56,18 @@
         opacity: 1;
       }
     }
+  }
+
+  @include width1337 {
+    .dropdown-header {
+      font-size: 16px;
+    }
+    .dropdown-body {
+      font-size: 14px;
+    }
+  }
+
+  @include width850 {
+    margin: 5px 0;
   }
 }
