@@ -61,7 +61,6 @@
       background-color: rgba(color(secondary), 0.5);
       padding: 20px;
 
-      
       * {
         text-align: center !important;
       }
@@ -83,11 +82,8 @@
   }
 
   @include width650 {
-  
     .project-image {
       min-height: 300px;
-
     }
   }
-
 }

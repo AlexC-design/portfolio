@@ -37,7 +37,7 @@ const ProjectCard = ({ history, img }) => {
           movies, view details about movies or save them to your list.
         </p>
 
-        <button onClick={handleClick} className="CTA">
+        <button onClick={handleClick} className="CTA show-mobile">
           View project
         </button>
       </div>

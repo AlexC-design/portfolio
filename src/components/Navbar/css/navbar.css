@@ -182,4 +182,21 @@
     width: 20px;
   }
 }
+
+.mobile-cover {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(30, 31, 37, 0.9);
+  display: none;
+}
+
+@media (max-width: 850px) {
+  .mobile-cover.show {
+    display: block;
+  }
+}
 /*# sourceMappingURL=navbar.css.map */

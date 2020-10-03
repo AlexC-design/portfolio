@@ -67,13 +67,15 @@ const Navbar = ({ location, history }) => {
 
     window.scrollTo({ top: 0 });
 
-    setMobileOpen(false);
-
     return () => {
       window.removeEventListener("scroll", e => handleScroll(e));
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [location]);
 
   useEffect(() => {
     window.addEventListener("scroll", e => handleProjectScroll(e));
@@ -94,71 +96,79 @@ const Navbar = ({ location, history }) => {
   }, []);
 
   return (
-    <div
-      className={`navbar-container ${navbarSmaller ? "smaller" : ""} ${
-        navbarSmall ? "small" : ""
-      } ${mobileOpen ? "open" : ""}`}
-    >
-      <Link
-        onClick={handleHomeClick}
-        className={`nav-link ${
-          location.pathname === "/" && !onProjects ? "active" : ""
-        }`}
-      >
-        <div className="text">Home</div>
-        {location.pathname === "/" && !onProjects && (
-          <div className="triangle pop-in-delayed">
-            <img src={triangle} alt="" className="spin-slow" />
-          </div>
-        )}
-      </Link>
-      <Link
-        onClick={handleProjectsClick}
-        className={`nav-link ${
-          location.pathname === "/" && onProjects ? "active" : ""
-        }`}
-      >
-        <div className="text">Projects</div>
-        {location.pathname === "/" && onProjects && (
-          <div className="triangle pop-in-delayed">
-            <img src={triangle} alt="" className="spin-slow" />
-          </div>
-        )}
-      </Link>
-      <Link
-        to="/about"
-        className={`nav-link ${location.pathname === "/about" ? "active" : ""}`}
-      >
-        <div className="text">About</div>
-        {location.pathname === "/about" && (
-          <div className="triangle pop-in-delayed">
-            <img src={triangle} alt="" className="spin-slow" />
-          </div>
-        )}
-      </Link>
-      <Link
-        to="/contact"
-        className={`nav-link ${
-          location.pathname === "/contact" ? "active" : ""
-        }`}
-      >
-        <div className="text">Contact</div>
-        {location.pathname === "/contact" && (
-          <div className="triangle pop-in-delayed">
-            <img src={triangle} alt="" className="spin-slow" />
-          </div>
-        )}
-      </Link>
-
+    <>
       <div
-        className={`burger-menu ${mobileOpen ? "open" : ""}`}
-        onClick={() => setMobileOpen(!mobileOpen)}
+        className={`navbar-container ${navbarSmaller ? "smaller" : ""} ${
+          navbarSmall ? "small" : ""
+        } ${mobileOpen ? "open" : ""}`}
       >
-        <div className="line" />
-        <div className="line" />
-        <div className="line" />
+        <Link
+          onClick={handleHomeClick}
+          className={`nav-link ${
+            location.pathname === "/" && !onProjects ? "active" : ""
+          }`}
+        >
+          <div className="text">Home</div>
+          {location.pathname === "/" && !onProjects && (
+            <div className="triangle pop-in-delayed">
+              <img src={triangle} alt="" className="spin-slow" />
+            </div>
+          )}
+        </Link>
+        <Link
+          onClick={handleProjectsClick}
+          className={`nav-link ${
+            location.pathname === "/" && onProjects ? "active" : ""
+          }`}
+        >
+          <div className="text">Projects</div>
+          {location.pathname === "/" && onProjects && (
+            <div className="triangle pop-in-delayed">
+              <img src={triangle} alt="" className="spin-slow" />
+            </div>
+          )}
+        </Link>
+        <Link
+          to="/about"
+          className={`nav-link ${
+            location.pathname === "/about" ? "active" : ""
+          }`}
+        >
+          <div className="text">About</div>
+          {location.pathname === "/about" && (
+            <div className="triangle pop-in-delayed">
+              <img src={triangle} alt="" className="spin-slow" />
+            </div>
+          )}
+        </Link>
+        <Link
+          to="/contact"
+          className={`nav-link ${
+            location.pathname === "/contact" ? "active" : ""
+          }`}
+        >
+          <div className="text">Contact</div>
+          {location.pathname === "/contact" && (
+            <div className="triangle pop-in-delayed">
+              <img src={triangle} alt="" className="spin-slow" />
+            </div>
+          )}
+        </Link>
+
+        <div
+          className={`burger-menu ${mobileOpen ? "open" : ""}`}
+          onClick={() => setMobileOpen(!mobileOpen)}
+        >
+          <div className="line" />
+          <div className="line" />
+          <div className="line" />
+        </div>
       </div>
-    </div>
+      <div
+        className={`mobile-cover ${mobileOpen ? "show" : ""}`}
+        onClick={() => setMobileOpen(false)}
+      />
+    </>
   );
 };
 
