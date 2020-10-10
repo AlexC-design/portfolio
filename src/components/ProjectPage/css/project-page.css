@@ -185,9 +185,6 @@
   .project-page .project-buttons .button {
     width: 200px;
   }
-  .project-page .project-buttons .button .text {
-    display: none;
-  }
   .project-page .project-buttons .button.next {
     background-color: rgba(0, 0, 0, 0);
     height: 50px;
@@ -201,6 +198,9 @@
 @media (max-width: 576px) {
   .project-page .project-buttons .button {
     width: 100px;
+  }
+  .project-page .project-buttons .button .text {
+    display: none;
   }
 }
 /*# sourceMappingURL=project-page.css.map */

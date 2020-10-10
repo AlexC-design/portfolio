@@ -83,6 +83,8 @@
   .project-card .project-image {
     width: 100%;
     border-radius: 10px 10px 0 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
   }
   .project-card .project-image:hover {
     cursor: pointer;

@@ -4,8 +4,9 @@ import play from "../../../assets/svg/play.svg";
 import pause from "../../../assets/svg/pause.svg";
 import importAll from "../../../services/importAll";
 import "./css/carousel.css";
+import { withRouter } from "react-router-dom";
 
-const Carousel = () => {
+const Carousel = ({ location }) => {
   const [images, setImages] = useState({});
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -34,14 +35,62 @@ const Carousel = () => {
     paused && nextImage();
   };
 
+  const importImages = project => {
+    switch (project) {
+      case "movie-cluster":
+        return importAll(
+          require.context(
+            "../../../assets/images/movie-cluster",
+            false,
+            /\.(png|jpe?g)$/
+          )
+        );
+
+      case "fin":
+        return importAll(
+          require.context("../../../assets/images/fin", false, /\.(png|jpe?g)$/)
+        );
+
+      case "beacon":
+        return importAll(
+          require.context(
+            "../../../assets/images/beacon",
+            false,
+            /\.(png|jpe?g)$/
+          )
+        );
+
+      case "bug-tracker":
+        return importAll(
+          require.context(
+            "../../../assets/images/bug-tracker",
+            false,
+            /\.(png|jpe?g)$/
+          )
+        );
+
+      case "old-folio":
+        return importAll(
+          require.context(
+            "../../../assets/images/old-folio",
+            false,
+            /\.(png|jpe?g)$/
+          )
+        );
+
+      case "new-folio":
+        return importAll(
+          require.context(
+            "../../../assets/images/new-folio",
+            false,
+            /\.(png|jpe?g)$/
+          )
+        );
+    }
+  };
+
   useEffect(() => {
-    const importedImages = importAll(
-      require.context(
-        "../../../assets/images/movie-cluster",
-        false,
-        /\.(png|jpe?g)$/
-      )
-    );
+    const importedImages = importImages(location.hash.replace(/#/g, ""));
 
     setImages(importedImages);
   }, []);
@@ -108,4 +157,4 @@ const Carousel = () => {
   );
 };
 
-export default Carousel;
+export default withRouter(Carousel);

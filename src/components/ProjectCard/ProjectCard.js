@@ -2,9 +2,9 @@ import React from "react";
 import { withRouter } from "react-router";
 import "./css/project-card.css";
 
-const ProjectCard = ({ history, img, title, type, tech, description }) => {
+const ProjectCard = ({ history, img, title, type, tech, description, name }) => {
   const handleClick = () => {
-    history.push("/project#movie-cluster");
+    history.push(`/project#${name}`);
   };
 
   const formatTech = tech => {

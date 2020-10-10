@@ -20,10 +20,14 @@ const ProjectPage = () => {
       <div className="project-buttons">
         <div className="prev button">
           <img src={arrowRight} className="arrow left" alt="" />
-          <div className="text">Prev project</div>
+          <div className="text">
+            Prev <span className="hide-mobile">project</span>{" "}
+          </div>
         </div>
         <div className="next button">
-          <div className="text">Next project</div>
+          <div className="text">
+            Next <span className="hide-mobile">project</span>{" "}
+          </div>
           <img src={arrowRight} className="arrow right" alt="" />
         </div>
         <div className="project-name">UI components</div>

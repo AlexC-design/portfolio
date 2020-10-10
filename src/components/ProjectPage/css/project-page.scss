@@ -136,14 +136,11 @@
         font-weight: bold;
         width: 200px;
 
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
       }
 
       .button {
         width: 200px;
-        .text {
-          display: none;
-        }
         &.next {
           background-color: rgba(black, 0);
           height: 50px;
@@ -160,6 +157,9 @@
     .project-buttons {
       .button {
         width: 100px;
+        .text {
+          display: none;
+        }
       }
     }
   }

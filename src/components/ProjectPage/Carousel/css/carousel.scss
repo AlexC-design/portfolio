@@ -21,14 +21,14 @@
       padding: 20px;
       position: absolute;
       left: 50%;
-      top: 0;
+      top: 50%;
       max-width: calc(100% - 40px);
       max-height: calc(100% - 40px);
       object-fit: cover;
       opacity: 0;
 
       transition: all 0.4s ease-out;
-      transform: translateX(-50%);
+      transform: translate(-50%, -50%);
 
       &.active {
         opacity: 1;
@@ -152,6 +152,10 @@
       .dot {
         display: none;
         pointer-events: none;
+      }
+      
+      .arrow {
+        opacity: 0.2;
       }
 
       .pause-button {

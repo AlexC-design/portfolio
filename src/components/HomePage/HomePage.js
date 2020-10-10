@@ -52,6 +52,7 @@ const HomePage = () => {
             return (
               <ProjectCard
                 img={tmbs[`${project.name}.jpg`]}
+                name={project.name}
                 title={project.title}
                 type={project.type}
                 tech={project.tech}
