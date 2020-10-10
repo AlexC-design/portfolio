@@ -2,20 +2,13 @@ import React, { useEffect, useState } from "react";
 import arrowRight from "../../../assets/svg/arrow-right.svg";
 import play from "../../../assets/svg/play.svg";
 import pause from "../../../assets/svg/pause.svg";
+import importAll from "../../../services/importAll";
 import "./css/carousel.css";
 
 const Carousel = () => {
   const [images, setImages] = useState({});
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [paused, setPaused] = useState(false);
-
-  const importAll = r => {
-    let images = {};
-    r.keys().map(item => {
-      images[item.replace("./", "")] = r(item);
-    });
-    return images;
-  };
 
   const setActiveImage = index => {
     setActiveImageIndex(index);

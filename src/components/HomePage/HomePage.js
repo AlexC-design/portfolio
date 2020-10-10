@@ -1,11 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "../Footer/Footer";
 import ProjectCard from "../ProjectCard/ProjectCard";
 import { ToolsIcons } from "../ToolsIcons/ToolsIcons";
-import movieClusterTmb from "../../assets/images/tmbs/movie-cluster-tmb.jpg";
+import { projects } from "../../services/projects";
+import importAll from "../../services/importAll";
 import "./css/home-page.css";
 
 const HomePage = () => {
+  const [tmbs, setTmbs] = useState({});
+
+  const importImages = async () => {
+    const importedImages = importAll(
+      require.context("../../assets/images/tmbs", false, /\.(png|jpe?g)$/)
+    );
+
+    console.log(importedImages);
+    setTmbs(importedImages);
+  };
+
+  useEffect(() => {
+    importImages();
+  }, []);
+
   return (
     <div className="page">
       <div className="container">
@@ -32,14 +48,17 @@ const HomePage = () => {
         <h1 className="title">Projects</h1>
 
         <div className="projects-container">
-          <ProjectCard img={movieClusterTmb} />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
+          {projects.map(project => {
+            return (
+              <ProjectCard
+                img={tmbs[`${project.name}.jpg`]}
+                title={project.title}
+                type={project.type}
+                tech={project.tech}
+                description={project.description}
+              />
+            );
+          })}
         </div>
       </div>
 
