@@ -116,6 +116,15 @@
     }
   }
 
+  &.single-image {
+    .image-container {
+      .carousel-image {
+        width: 100%;
+        opacity:  0.5;
+      }
+    }
+  }
+
   @include width1337 {
     .controls {
       .dot {

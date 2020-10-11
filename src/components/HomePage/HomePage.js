@@ -13,8 +13,6 @@ const HomePage = () => {
     const importedImages = importAll(
       require.context("../../assets/images/tmbs", false, /\.(png|jpe?g)$/)
     );
-
-    console.log(importedImages);
     setTmbs(importedImages);
   };
 
@@ -56,6 +54,7 @@ const HomePage = () => {
                 title={project.title}
                 type={project.type}
                 tech={project.tech}
+                key={project.name}
                 description={project.description}
               />
             );

@@ -23,6 +23,7 @@ const ContactPage = () => {
           className="link-icon"
           href="https://github.com/AlexC-design"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <img className="pop-in-delayed" src={github} alt="" />
         </a>
@@ -30,6 +31,7 @@ const ContactPage = () => {
           className="link-icon"
           href="https://www.linkedin.com/in/alexandru-ciobotaru-655777193/"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <img className="pop-in-delayed" src={linkedIn} alt="" />
         </a>

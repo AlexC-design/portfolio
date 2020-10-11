@@ -4,7 +4,7 @@ import "./css/scrolling-triangles.css";
 
 const ScrollingTriangles = () => {
   const [scrollAmount, setScrollAmount] = useState(0);
-  const [triangleSets, setTriangleSets] = useState([0, 1, 2]);
+  const triangleSets = [0, 1, 2];
 
   const triangles = {
     largest: { offsetPosition: 100, offsetRotation: 0 },
@@ -58,6 +58,7 @@ const ScrollingTriangles = () => {
               className={`triangle ${triangleName}`}
               src={triangle}
               alt=""
+              key={triangleName}
               style={triangleStyle(triangleName, set)}
             />
           );

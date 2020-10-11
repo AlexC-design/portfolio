@@ -36,9 +36,7 @@ const Navbar = ({ location, history }) => {
     }
   };
 
-  useEffect(() => {
-    console.log("updating");
-  });
+  useEffect(() => {});
 
   const handleProjectsClick = () => {
     setMobileOpen(false);
@@ -79,9 +77,7 @@ const Navbar = ({ location, history }) => {
 
   useEffect(() => {
     window.addEventListener("scroll", e => handleProjectScroll(e));
-    console.log("ADDING");
     if (location.pathname === "/") {
-      console.log(location.pathname);
       if (window.scrollY >= 265 && !onProjects) {
         setOnProjects(true);
       } else if (window.scrollY < 265 && onProjects) {
@@ -91,8 +87,8 @@ const Navbar = ({ location, history }) => {
 
     return () => {
       window.removeEventListener("scroll", e => handleProjectScroll(e));
-      console.log("REMOVING");
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -102,7 +98,7 @@ const Navbar = ({ location, history }) => {
           navbarSmall ? "small" : ""
         } ${mobileOpen ? "open" : ""}`}
       >
-        <Link
+        <div
           onClick={handleHomeClick}
           className={`nav-link ${
             location.pathname === "/" && !onProjects ? "active" : ""
@@ -110,12 +106,12 @@ const Navbar = ({ location, history }) => {
         >
           <div className="text">Home</div>
           {location.pathname === "/" && !onProjects && (
-            <div className="triangle pop-in-delayed">
+            <div className="triangle pop-in">
               <img src={triangle} alt="" className="spin-slow" />
             </div>
           )}
-        </Link>
-        <Link
+        </div>
+        <div
           onClick={handleProjectsClick}
           className={`nav-link ${
             location.pathname === "/" && onProjects ? "active" : ""
@@ -123,11 +119,11 @@ const Navbar = ({ location, history }) => {
         >
           <div className="text">Projects</div>
           {location.pathname === "/" && onProjects && (
-            <div className="triangle pop-in-delayed">
+            <div className="triangle pop-in">
               <img src={triangle} alt="" className="spin-slow" />
             </div>
           )}
-        </Link>
+        </div>
         <Link
           to="/about"
           className={`nav-link ${
@@ -136,7 +132,7 @@ const Navbar = ({ location, history }) => {
         >
           <div className="text">About</div>
           {location.pathname === "/about" && (
-            <div className="triangle pop-in-delayed">
+            <div className="triangle pop-in">
               <img src={triangle} alt="" className="spin-slow" />
             </div>
           )}
@@ -149,7 +145,7 @@ const Navbar = ({ location, history }) => {
         >
           <div className="text">Contact</div>
           {location.pathname === "/contact" && (
-            <div className="triangle pop-in-delayed">
+            <div className="triangle pop-in">
               <img src={triangle} alt="" className="spin-slow" />
             </div>
           )}

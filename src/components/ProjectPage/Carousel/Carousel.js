@@ -10,6 +10,7 @@ const Carousel = ({ location }) => {
   const [images, setImages] = useState({});
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [singleImage, setSingleImage] = useState(false);
 
   const setActiveImage = index => {
     setActiveImageIndex(index);
@@ -86,6 +87,18 @@ const Carousel = ({ location }) => {
             /\.(png|jpe?g)$/
           )
         );
+
+      case "ui-components":
+        return importAll(
+          require.context(
+            "../../../assets/images/ui-components",
+            false,
+            /\.(png|jpe?g)$/
+          )
+        );
+
+      default:
+        return [];
     }
   };
 
@@ -99,21 +112,31 @@ const Carousel = ({ location }) => {
 
   // ================== CYCLE IMAGES ===============
   useEffect(() => {
-    let timeoutId = null;
+    if (images.length === 1) {
+      setSingleImage(true);
+      setPaused(true);
+    }
+    if (!singleImage) {
+      let timeoutId = null;
 
-    if (!paused) {
-      timeoutId = setTimeout(() => {
-        nextImage();
-      }, 3000);
+      if (!paused) {
+        timeoutId = setTimeout(() => {
+          nextImage();
+        }, 5000);
+      }
+
+      return () => {
+        clearTimeout(timeoutId);
+      };
     }
 
-    return () => {
-      clearTimeout(timeoutId);
-    };
-  }, [activeImageIndex, paused, location]);
+    console.log(singleImage);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [images, activeImageIndex, paused, location, singleImage]);
 
   return (
-    <div className="carousel">
+    <div className={`carousel ${singleImage ? "single-image" : ""}`}>
       <div className="image-container">
         {Object.keys(images).map((image, index) => (
           <img

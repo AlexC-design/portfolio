@@ -58,6 +58,7 @@
   display: -ms-flexbox;
   display: flex;
   margin: 0 20px;
+  cursor: pointer;
   -webkit-transition: all 0s linear, font-weight 0s linear;
   transition: all 0s linear, font-weight 0s linear;
 }

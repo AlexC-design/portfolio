@@ -29,7 +29,8 @@
     text-decoration: none;
     display: flex;
     margin: 0 20px;
-
+    cursor: pointer;
+    
     transition: all 0s linear, font-weight 0s linear;
 
     &.active {

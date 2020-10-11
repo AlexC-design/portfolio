@@ -18,6 +18,7 @@ const Footer = () => {
           className="link-icon"
           href="https://github.com/AlexC-design"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <img src={github} alt="" />
         </a>
@@ -25,6 +26,7 @@ const Footer = () => {
           className="link-icon"
           href="https://www.linkedin.com/in/alexandru-ciobotaru-655777193/"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <img src={linkedIn} alt="" />
         </a>

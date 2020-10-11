@@ -151,6 +151,11 @@
           filter: invert(78%) sepia(35%) saturate(835%) hue-rotate(192deg) brightness(91%) contrast(126%);
 }
 
+.carousel.single-image .image-container .carousel-image {
+  width: 100%;
+  opacity: 0.5;
+}
+
 @media (max-width: 1337px) {
   .carousel .controls .dot {
     margin: 0;

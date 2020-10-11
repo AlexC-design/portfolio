@@ -62,7 +62,7 @@ const AboutPage = () => {
             <p>
               If you want to check out some of my previous work as a digital
               artist, please visit:{" "}
-              <a href="https://allexc.crevado.com/" target="_blank">
+              <a href="https://allexc.crevado.com/" target="_blank" rel="noopener noreferrer">
                 allexc.crevado.com
               </a>
             </p>
@@ -89,14 +89,14 @@ const AboutPage = () => {
             <div className="cols">
               <div className="col-1">
                 {codeTools.slice(0, codeTools.length / 2).map(tool => (
-                  <p>{tool}</p>
+                  <p key={`${tool}`}>{tool}</p>
                 ))}
               </div>
               <div className="col-2">
                 {codeTools
                   .slice(codeTools.length / 2, codeTools.length)
                   .map(tool => (
-                    <p>{tool}</p>
+                    <p key={`${tool}`}>{tool}</p>
                   ))}
               </div>
             </div>
@@ -106,7 +106,7 @@ const AboutPage = () => {
             <br />
             <br />
             {designTools.map(tool => (
-              <p>{tool}</p>
+              <p key={`${tool}`}>{tool}</p>
             ))}
           </div>
         </div>
