@@ -102,6 +102,23 @@ a {
   box-shadow: 0px 0px 50px -10px color(accent);
 }
 
+// ============= SIMPLEBAR =============
+
+.simplebar-track.simplebar-vertical {
+  overflow: visible;
+  height: 96%;
+  top: 2%;
+  right: 4px;
+
+  .simplebar-scrollbar {
+    overflow: visible;
+    &:before {
+      background-color: color(accent);
+      opacity: 100%;
+    }
+  }
+}
+
 // ============= ANIMATIONS =============
 
 .spin {
@@ -128,11 +145,43 @@ a {
   animation: pop-in 0.4s 0.8s $cbOut forwards;
 }
 
+.fade-in {
+  animation: fade-in 2s $cbOut forwards;
+}
+
+.fade-in-delayed {
+  animation: fade-in 0.4s 0.4s ease-out forwards;
+}
+
+.fade-in-absolute {
+  animation: fade-in-absolute 0.4s $cbOut forwards;
+}
+
 @keyframes pop-in {
   0% {
     transform: scale(0);
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-absolute {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
   }
 }

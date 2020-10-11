@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import arrowRight from "../../../assets/svg/arrow-right.svg";
 import play from "../../../assets/svg/play.svg";
 import pause from "../../../assets/svg/pause.svg";
 import importAll from "../../../services/importAll";
+import SimpleBar from "simplebar-react";
+import "simplebar/src/simplebar.css";
 import "./css/carousel.css";
 import { withRouter } from "react-router-dom";
 
@@ -11,6 +13,8 @@ const Carousel = ({ location }) => {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const [singleImage, setSingleImage] = useState(false);
+  const imgContainer = useRef(null);
+  const ctrlsRef = useRef(null);
 
   const setActiveImage = index => {
     setActiveImageIndex(index);
@@ -107,14 +111,24 @@ const Carousel = ({ location }) => {
 
     setImages(importedImages);
 
+    imgContainer.current.classList.remove("fade-in-delayed");
+    ctrlsRef.current.classList.remove("fade-in-delayed");
+    setTimeout(() => {
+      imgContainer.current.classList.add("fade-in-delayed");
+      ctrlsRef.current.classList.add("fade-in-delayed");
+    });
+
     setActiveImageIndex(0);
   }, [location]);
 
   // ================== CYCLE IMAGES ===============
   useEffect(() => {
-    if (images.length === 1) {
+    if (Object.keys(images).length === 1) {
       setSingleImage(true);
       setPaused(true);
+    } else {
+      setSingleImage(false);
+      setPaused(false);
     }
     if (!singleImage) {
       let timeoutId = null;
@@ -130,27 +144,31 @@ const Carousel = ({ location }) => {
       };
     }
 
-    console.log(singleImage);
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [images, activeImageIndex, paused, location, singleImage]);
 
   return (
     <div className={`carousel ${singleImage ? "single-image" : ""}`}>
-      <div className="image-container">
-        {Object.keys(images).map((image, index) => (
-          <img
-            className={`carousel-image ${
-              activeImageIndex === index && "active"
-            }`}
-            src={images[image]}
-            key={`${images[image]}`}
-            alt=""
-          />
-        ))}
+      <div className="image-container" ref={imgContainer}>
+        <SimpleBar
+          className="simplebar-component"
+          autoHide={false}
+          style={{ width: "100%", height: "100%" }}
+        >
+          {Object.keys(images).map((image, index) => (
+            <img
+              className={`carousel-image ${
+                activeImageIndex === index && "active"
+              }`}
+              src={images[image]}
+              key={`${images[image]}`}
+              alt=""
+            />
+          ))}
+        </SimpleBar>
       </div>
 
-      <div className="controls">
+      <div ref={ctrlsRef} className="controls fade-in-delayed">
         <img
           className="arrow left"
           src={arrowRight}

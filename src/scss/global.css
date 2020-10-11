@@ -136,6 +136,22 @@ a:active {
           box-shadow: 0px 0px 50px -10px #b6bdff;
 }
 
+.simplebar-track.simplebar-vertical {
+  overflow: visible;
+  height: 96%;
+  top: 2%;
+  right: 4px;
+}
+
+.simplebar-track.simplebar-vertical .simplebar-scrollbar {
+  overflow: visible;
+}
+
+.simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
+  background-color: #b6bdff;
+  opacity: 100%;
+}
+
 .spin {
   -webkit-animation: spin 2s linear infinite;
           animation: spin 2s linear infinite;
@@ -178,6 +194,21 @@ a:active {
           animation: pop-in 0.4s 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
+.fade-in {
+  -webkit-animation: fade-in 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+          animation: fade-in 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.fade-in-delayed {
+  -webkit-animation: fade-in 0.4s 0.4s ease-out forwards;
+          animation: fade-in 0.4s 0.4s ease-out forwards;
+}
+
+.fade-in-absolute {
+  -webkit-animation: fade-in-absolute 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+          animation: fade-in-absolute 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
 @-webkit-keyframes pop-in {
   0% {
     -webkit-transform: scale(0);
@@ -197,6 +228,50 @@ a:active {
   100% {
     -webkit-transform: scale(1);
             transform: scale(1);
+  }
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fade-in-absolute {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes fade-in-absolute {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
   }
 }
 /*# sourceMappingURL=global.css.map */
