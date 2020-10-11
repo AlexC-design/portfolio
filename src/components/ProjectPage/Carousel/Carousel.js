@@ -93,7 +93,9 @@ const Carousel = ({ location }) => {
     const importedImages = importImages(location.hash.replace(/#/g, ""));
 
     setImages(importedImages);
-  }, []);
+
+    setActiveImageIndex(0);
+  }, [location]);
 
   // ================== CYCLE IMAGES ===============
   useEffect(() => {
@@ -108,7 +110,7 @@ const Carousel = ({ location }) => {
     return () => {
       clearTimeout(timeoutId);
     };
-  }, [activeImageIndex, paused]);
+  }, [activeImageIndex, paused, location]);
 
   return (
     <div className="carousel">
