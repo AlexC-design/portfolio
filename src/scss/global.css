@@ -56,16 +56,28 @@ body {
 a {
   font-weight: bold;
   color: #b6bdff;
+  -webkit-transition: all 0.1s linear !important;
+  transition: all 0.1s linear !important;
 }
 
 a:hover {
-  -webkit-filter: brightness(110%);
-          filter: brightness(110%);
+  -webkit-filter: brightness(200%);
+          filter: brightness(200%);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
 a:active {
   -webkit-filter: brightness(150%);
           filter: brightness(150%);
+}
+
+.secondary-link {
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.secondary-link:hover {
+  color: white;
 }
 
 .accent-color {
@@ -82,6 +94,10 @@ a:active {
 
 .text-medium {
   font-size: 0.8em;
+}
+
+.text-large {
+  font-size: 1.2em;
 }
 
 .text-thin {
@@ -136,6 +152,18 @@ a:active {
           box-shadow: 0px 0px 50px -10px #b6bdff;
 }
 
+.mb {
+  margin-bottom: 20px !important;
+}
+
+.mt {
+  margin-top: 20px !important;
+}
+
+.my {
+  margin: 20px 0 !important;
+}
+
 .simplebar-track.simplebar-vertical {
   overflow: visible;
   height: 96%;
@@ -144,12 +172,18 @@ a:active {
 }
 
 .simplebar-track.simplebar-vertical .simplebar-scrollbar {
+  -webkit-transition: all 0s linear;
+  transition: all 0s linear;
   overflow: visible;
 }
 
 .simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
   background-color: #b6bdff;
   opacity: 100%;
+}
+
+.text-container .simplebar-track.simplebar-vertical {
+  right: -15px;
 }
 
 .spin {

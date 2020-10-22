@@ -2,9 +2,11 @@ import React, { useState, useRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import arrowDown from "../../../assets/svg/arrow-down.svg";
 import { setOpenDropdownIndex } from "../../../store/state/openDropdownIndex";
+import SimpleBar from "simplebar-react";
+import "simplebar/src/simplebar.css";
 import "./css/dropdown.css";
 
-const Dropdown = ({ index, title }) => {
+const Dropdown = ({ index, title, project }) => {
   const [open, setOpen] = useState(false);
   const [opening, setOpening] = useState(false);
   const [closing, setClosing] = useState(false);
@@ -50,7 +52,7 @@ const Dropdown = ({ index, title }) => {
   };
 
   const getHeight = () => {
-    return contentRef.current.clientHeight;
+    return contentRef.current && contentRef.current.clientHeight;
   };
 
   useEffect(() => {
@@ -62,6 +64,10 @@ const Dropdown = ({ index, title }) => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [openDropdownIndex]);
+
+  useEffect(() => {
+    dispatch(setOpenDropdownIndex(0));
+  }, [project, dispatch]);
 
   return (
     <div className={`dropdown ${open ? "open" : ""}`}>
@@ -78,20 +84,61 @@ const Dropdown = ({ index, title }) => {
         }}
       >
         <div className="dropdown-body-content" ref={contentRef}>
-          test description <br />
-          test description <br />
-          test description <br />
-          test description <br />
-          test description <br />
-          test description <br />
-          test description <br />
-          test description <br />
-          test description <br />
-          test description <br />
-          test description <br />
-          test description <br />
-          test description <br />
-          test description <br />
+          {/* ----------- FIRST DROPDOWN ----------- */}
+          {index === 0 && (
+            <div className="text-container">
+              <SimpleBar
+                className="simplebar-component"
+                autoHide={false}
+                style={{ width: "100%", height: `${getHeight() - 36}px` }}
+              >
+                <div>Live version:</div>
+                <a
+                  className="primary-link"
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {project.link}
+                </a>
+                <div className="mt">Code:</div>
+                <a
+                  className="secondary-link"
+                  href={project.code}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {project.code}
+                </a>
+                <div className="mt">Technologies used:</div>
+                <div>{project.tech}</div>
+              </SimpleBar>
+            </div>
+          )}
+          {/* ----------- SECOND DROPDOWN ----------- */}
+          {index === 1 && (
+            <div className="text-container">
+              <SimpleBar
+                className="simplebar-component"
+                autoHide={false}
+                style={{ width: "100%", height: `${getHeight() - 36}px` }}
+              >
+                <div>{project.description}</div>
+              </SimpleBar>
+            </div>
+          )}
+          {/* ----------- THIRD DROPDOWN ----------- */}
+          {index === 2 && (
+            <div className="text-container">
+              <SimpleBar
+                className="simplebar-component"
+                autoHide={false}
+                style={{ width: "100%", height: `${getHeight() - 36}px` }}
+              >
+                {project.process}
+              </SimpleBar>
+            </div>
+          )}
         </div>
       </div>
     </div>

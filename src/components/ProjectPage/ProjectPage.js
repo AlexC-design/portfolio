@@ -43,7 +43,12 @@ const ProjectPage = ({ history, location }) => {
 
       <div className="dropdowns">
         {dropdowns.map((dropdown, index) => (
-          <Dropdown index={index} title={dropdown} key={dropdown} />
+          <Dropdown
+            index={index}
+            title={dropdown}
+            key={dropdown}
+            project={currentProject}
+          />
         ))}
       </div>
 
