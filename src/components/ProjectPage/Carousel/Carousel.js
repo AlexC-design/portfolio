@@ -107,6 +107,14 @@ const Carousel = ({ location }) => {
   };
 
   useEffect(() => {
+    if (Object.keys(images).length === 1) {
+      setSingleImage(true);
+      setPaused(true);
+    } else {
+      setSingleImage(false);
+      setPaused(false);
+    }
+
     const importedImages = importImages(location.hash.replace(/#/g, ""));
 
     setImages(importedImages);
@@ -123,13 +131,6 @@ const Carousel = ({ location }) => {
 
   // ================== CYCLE IMAGES ===============
   useEffect(() => {
-    if (Object.keys(images).length === 1) {
-      setSingleImage(true);
-      setPaused(true);
-    } else {
-      setSingleImage(false);
-      setPaused(false);
-    }
     if (!singleImage) {
       let timeoutId = null;
 

@@ -35,11 +35,11 @@
     height: 0;
 
     .dropdown-body-content {
-      padding: 20px;
+      padding: 10px 40px;
       opacity: 0;
 
       .text-container {
-        max-height: calc(90vh - 300px);
+        max-height: calc(100vh - 400px);
 
         @include width850 {
           max-height: calc(50vh - 180px);

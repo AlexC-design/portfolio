@@ -64,12 +64,12 @@
 }
 
 .dropdown .dropdown-body .dropdown-body-content {
-  padding: 20px;
+  padding: 10px 40px;
   opacity: 0;
 }
 
 .dropdown .dropdown-body .dropdown-body-content .text-container {
-  max-height: calc(90vh - 300px);
+  max-height: calc(100vh - 400px);
 }
 
 @media (max-width: 850px) {

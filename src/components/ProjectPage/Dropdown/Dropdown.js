@@ -90,7 +90,7 @@ const Dropdown = ({ index, title, project }) => {
               <SimpleBar
                 className="simplebar-component"
                 autoHide={false}
-                style={{ width: "100%", height: `${getHeight() - 36}px` }}
+                style={{ width: "100%", height: `${getHeight() - 20}px` }}
               >
                 <div>Live version:</div>
                 <a
@@ -111,7 +111,7 @@ const Dropdown = ({ index, title, project }) => {
                   {project.code}
                 </a>
                 <div className="mt">Technologies used:</div>
-                <div>{project.tech}</div>
+                <div className="faded">{project.tech}</div>
               </SimpleBar>
             </div>
           )}
@@ -121,7 +121,7 @@ const Dropdown = ({ index, title, project }) => {
               <SimpleBar
                 className="simplebar-component"
                 autoHide={false}
-                style={{ width: "100%", height: `${getHeight() - 36}px` }}
+                style={{ width: "100%", height: `${getHeight() - 20}px` }}
               >
                 <div>{project.description}</div>
               </SimpleBar>
@@ -133,7 +133,7 @@ const Dropdown = ({ index, title, project }) => {
               <SimpleBar
                 className="simplebar-component"
                 autoHide={false}
-                style={{ width: "100%", height: `${getHeight() - 36}px` }}
+                style={{ width: "100%", height: `${getHeight() - 20}px` }}
               >
                 {project.process}
               </SimpleBar>
