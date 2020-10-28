@@ -16,6 +16,7 @@ const Carousel = ({ location }) => {
   const imgContainer = useRef(null);
   const ctrlsRef = useRef(null);
 
+  // =============== METHODS ===============
   const setActiveImage = index => {
     setActiveImageIndex(index);
   };
@@ -39,6 +40,51 @@ const Carousel = ({ location }) => {
     setPaused(!paused);
     paused && nextImage();
   };
+
+  // =============== LOAD NEW IMAGES ===============
+  useEffect(() => {
+    const importedImages = importImages(location.hash.replace(/#/g, ""));
+    setImages(importedImages);
+
+    imgContainer.current.classList.remove("fade-in-delayed");
+    ctrlsRef.current.classList.remove("fade-in-delayed");
+    setTimeout(() => {
+      imgContainer.current.classList.add("fade-in-delayed");
+      ctrlsRef.current.classList.add("fade-in-delayed");
+    });
+
+    setActiveImageIndex(0);
+  }, [location]);
+
+  // =============== UPDATE CAROUSEL TYPE ===============
+  useEffect(() => {
+    if (Object.keys(images).length === 1) {
+      setSingleImage(true);
+      setPaused(true);
+    } else {
+      setSingleImage(false);
+      setPaused(false);
+    }
+  }, [images]);
+
+  // =============== CYCLE IMAGES ===============
+  useEffect(() => {
+    if (!singleImage) {
+      let timeoutId = null;
+
+      if (!paused) {
+        timeoutId = setTimeout(() => {
+          nextImage();
+        }, 5000);
+      }
+
+      return () => {
+        clearTimeout(timeoutId);
+      };
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [images, activeImageIndex, paused, location, singleImage]);
 
   const importImages = project => {
     switch (project) {
@@ -105,48 +151,6 @@ const Carousel = ({ location }) => {
         return [];
     }
   };
-
-  useEffect(() => {
-    if (Object.keys(images).length === 1) {
-      setSingleImage(true);
-      setPaused(true);
-    } else {
-      setSingleImage(false);
-      setPaused(false);
-    }
-
-    const importedImages = importImages(location.hash.replace(/#/g, ""));
-
-    setImages(importedImages);
-
-    imgContainer.current.classList.remove("fade-in-delayed");
-    ctrlsRef.current.classList.remove("fade-in-delayed");
-    setTimeout(() => {
-      imgContainer.current.classList.add("fade-in-delayed");
-      ctrlsRef.current.classList.add("fade-in-delayed");
-    });
-
-    setActiveImageIndex(0);
-  }, [location]);
-
-  // ================== CYCLE IMAGES ===============
-  useEffect(() => {
-    if (!singleImage) {
-      let timeoutId = null;
-
-      if (!paused) {
-        timeoutId = setTimeout(() => {
-          nextImage();
-        }, 5000);
-      }
-
-      return () => {
-        clearTimeout(timeoutId);
-      };
-    }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [images, activeImageIndex, paused, location, singleImage]);
 
   return (
     <div className={`carousel ${singleImage ? "single-image" : ""}`}>

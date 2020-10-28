@@ -72,7 +72,7 @@ const Dropdown = ({ index, title, project }) => {
   return (
     <div className={`dropdown ${open ? "open" : ""}`}>
       <div className="dropdown-header" onClick={handleClick}>
-        <p className="text-bold">{title}</p>
+        <p className="text-bold">{index === 0 ? project.title : title}</p>
         <img className="dropdown-arrow" src={arrowDown} alt="" />
       </div>
       <div

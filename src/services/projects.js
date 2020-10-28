@@ -8,8 +8,8 @@ export const projects = [
     tech: "React, Redux, Redux-thunk, React-router, Axios, TMDB API, Figma",
     description:
       "Designed and built a responsive SPA using React and Redux, that allows you to browse movies by categories, genres, search for specific movies, view details about movies or save them to your list.",
-    link: "testlink",
-    code: "testcodelink",
+    link: "https://moviecluster.now.sh/",
+    code: "https://github.com/AlexC-design/movie-cluster-r",
     process: (
       <>
         <p>This is a re-make of a similar project I've done in the past.</p>
@@ -66,8 +66,8 @@ export const projects = [
     tech: "React, Redux, React-router, Redux-persist, Chart.js, Figma",
     description:
       "Frontend personal finance application, where you can view payments breakdown and history charts, send/receive payments, manage cards, change payment methods and more.",
-    link: "testlink",
-    code: "testcodelink",
+    link: "https://fin-frontend.now.sh/",
+    code: "https://github.com/AlexC-design/fin",
     process: (
       <>
         <p>
@@ -131,8 +131,8 @@ export const projects = [
     tech: "React, Redux, React-router, Figma, Photoshop",
     description:
       "Designed and built a responsive website in React, focusing mainly on visual design, vector illustrations and CSS animations.",
-    link: "testlink",
-    code: "testcodelink",
+    link: "https://beacon-logistics.now.sh/",
+    code: "https://github.com/AlexC-design/beacon",
     process: (
       <>
         <p>
@@ -171,8 +171,8 @@ export const projects = [
       "React, Redux, Redux-thunk, React-router, React-dnd, Redux-saga, Redux-persist, Axios",
     description:
       "Full stack application built using the MERN stack (Mongo, Express, React, Node). Created a system that contributes to the development of a project by managing and maintaining a list of development related issues.",
-    link: "testlink",
-    code: "testcodelink",
+    link: "https://bug-tracker-client.now.sh/",
+    code: "https://github.com/AlexC-design/bug-tracker",
     process: (
       <>
         <p>
@@ -350,10 +350,41 @@ export const projects = [
     title: "UI Components",
     type: "UI DESIGN",
     tech: "Figma",
-    description:
-      "Designed and built a responsive SPA built using react and redux, that allows you to browse movies by categories, genres, search for specific movies, view details about movies or save them to your list.",
+    description: "Creating a responsive design for various common UI elements.",
     link: "testlink",
     code: "testcodelink",
-    process: "test process"
+    process: (
+      <>
+        <p>
+          This was just a short project to do some design exploration and to
+          practice my design skills.
+        </p>
+        <br />
+        <p>
+          The purpose was to build a set of cohesive UI elements and think about
+          the different states they could have troughout the website and how to
+          best depict them using design priciples.
+        </p>
+        <br />
+        <p>
+          I started by giving myself a set of restrictions in terms of color and
+          general syling that I had to apply to all of the elements to keep them
+          consistent.
+        </p>
+        <p>
+          Then I just picked some of the more common UI elements I could think
+          of and started designging them to fit my decided structure. All while
+          keeping in mind the responsiveness aspect of these elements and how
+          they would look on a mobile device as well as on desktop.
+        </p>
+        <br />
+        <p>
+          It was a fun little project and I plan on doing more of these in the
+          future. I think it's a good way of keeping your skills sharp and
+          experimenting with new designs.
+        </p>
+        <br />
+      </>
+    )
   }
 ];
