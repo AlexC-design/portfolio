@@ -9,6 +9,8 @@
     .profile-picture {
       width: 400px;
       height: 400px;
+      min-width: 400px;
+      min-height: 400px;
       border-radius: 2px;
       border: solid 1px white;
     }
@@ -28,6 +30,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      margin-top: 10px;
 
       .about-text {
         text-align: center;
@@ -40,6 +43,8 @@
       .profile-picture {
         width: 300px;
         height: 300px;
+        min-width: 300px;
+        min-height: 300px;
       }
 
       .my-name {
@@ -57,6 +62,8 @@
       .profile-picture {
         width: 250px;
         height: 250px;
+        min-width: 250px;
+        min-height: 250px;
       }
 
       .my-name {

@@ -170,8 +170,8 @@
   .navbar-container.open .nav-link {
     opacity: 1;
     pointer-events: all;
-    -webkit-transition: all 0.2s 0.2s ease-in, font-weight 0s linear;
-    transition: all 0.2s 0.2s ease-in, font-weight 0s linear;
+    -webkit-transition: all 0.2s 0.2s ease-in, font-weight 0s linear !important;
+    transition: all 0.2s 0.2s ease-in, font-weight 0s linear !important;
   }
 }
 
@@ -185,7 +185,7 @@
 }
 
 .mobile-cover {
-  z-index: 1;
+  z-index: 3;
   position: fixed;
   top: 0;
   left: 0;

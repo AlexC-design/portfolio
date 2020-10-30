@@ -2,11 +2,18 @@ import React, { useEffect, useState, useRef } from "react";
 import arrowRight from "../../../assets/svg/arrow-right.svg";
 import play from "../../../assets/svg/play.svg";
 import pause from "../../../assets/svg/pause.svg";
+import fullScreenButton from "../../../assets/svg/full-screen.svg";
+import halfScreenButton from "../../../assets/svg/half-screen.svg";
 import importAll from "../../../services/importAll";
 import SimpleBar from "simplebar-react";
 import "simplebar/src/simplebar.css";
 import "./css/carousel.css";
 import { withRouter } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setFullScreenOn,
+  setFullScreenOff
+} from "../../../store/state/carousel";
 
 const Carousel = ({ location }) => {
   const [images, setImages] = useState({});
@@ -15,6 +22,11 @@ const Carousel = ({ location }) => {
   const [singleImage, setSingleImage] = useState(false);
   const imgContainer = useRef(null);
   const ctrlsRef = useRef(null);
+
+  const dispatch = useDispatch();
+  const { fullScreen } = useSelector(state => ({
+    fullScreen: state.carousel.fullScreen
+  }));
 
   // =============== METHODS ===============
   const setActiveImage = index => {
@@ -39,6 +51,14 @@ const Carousel = ({ location }) => {
   const togglePaused = () => {
     setPaused(!paused);
     paused && nextImage();
+  };
+
+  const toggleFullScreen = () => {
+    if (fullScreen) {
+      dispatch(setFullScreenOff());
+    } else {
+      dispatch(setFullScreenOn());
+    }
   };
 
   // =============== LOAD NEW IMAGES ===============
@@ -153,8 +173,16 @@ const Carousel = ({ location }) => {
   };
 
   return (
-    <div className={`carousel ${singleImage ? "single-image" : ""}`}>
+    <div
+      className={`carousel ${singleImage ? "single-image" : ""} ${
+        fullScreen ? "full-screen" : ""
+      }`}
+    >
       <div className="image-container" ref={imgContainer}>
+        <div className="full-screen-button" onClick={toggleFullScreen}>
+          {!fullScreen && <img src={fullScreenButton} alt="" />}
+          {fullScreen && <img src={halfScreenButton} alt="" />}
+        </div>
         <SimpleBar
           className="simplebar-component"
           autoHide={false}

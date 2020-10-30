@@ -244,7 +244,7 @@ export const projects = [
     tech: "React, Redux, React-router, Simplebar-react, Figma",
     description:
       "Portfolio website for showcasing my latest projects. Designed in Figma, built with React and Redux.",
-    link: "testlink",
+    link: null,
     code: "testcodelink",
     process: (
       <>
@@ -351,8 +351,8 @@ export const projects = [
     type: "UI DESIGN",
     tech: "Figma",
     description: "Creating a responsive design for various common UI elements.",
-    link: "testlink",
-    code: "testcodelink",
+    link: null,
+    code: null,
     process: (
       <>
         <p>

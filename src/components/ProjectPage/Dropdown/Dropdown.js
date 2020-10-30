@@ -5,6 +5,7 @@ import { setOpenDropdownIndex } from "../../../store/state/openDropdownIndex";
 import SimpleBar from "simplebar-react";
 import "simplebar/src/simplebar.css";
 import "./css/dropdown.css";
+import { withRouter } from "react-router-dom";
 
 const Dropdown = ({ index, title, project }) => {
   const [open, setOpen] = useState(false);
@@ -52,7 +53,7 @@ const Dropdown = ({ index, title, project }) => {
   };
 
   const getHeight = () => {
-    return contentRef.current && contentRef.current.clientHeight;
+    return contentRef.current && contentRef.current.clientHeight + 20;
   };
 
   useEffect(() => {
@@ -83,35 +84,45 @@ const Dropdown = ({ index, title, project }) => {
           }`
         }}
       >
-        <div className="dropdown-body-content" ref={contentRef}>
+        <div className="dropdown-body-content">
           {/* ----------- FIRST DROPDOWN ----------- */}
           {index === 0 && (
             <div className="text-container">
               <SimpleBar
                 className="simplebar-component"
                 autoHide={false}
-                style={{ width: "100%", height: `${getHeight() - 20}px` }}
+                style={{ width: "100%", height: `${getHeight()}px` }}
               >
-                <div>Live version:</div>
-                <a
-                  className="primary-link"
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {project.link}
-                </a>
-                <div className="mt">Code:</div>
-                <a
-                  className="secondary-link"
-                  href={project.code}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {project.code}
-                </a>
-                <div className="mt">Technologies used:</div>
-                <div className="faded">{project.tech}</div>
+                <div ref={contentRef}>
+                  {project.link && (
+                    <div className="mb">
+                      <div>Live version:</div>
+                      <a
+                        className="primary-link"
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {project.link}
+                      </a>
+                    </div>
+                  )}
+                  {project.code && (
+                    <div className="mb">
+                      <div>Code:</div>
+                      <a
+                        className="secondary-link"
+                        href={project.code}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {project.code}
+                      </a>
+                    </div>
+                  )}
+                  <div>Technologies used:</div>
+                  <div className="faded">{project.tech}</div>
+                </div>
               </SimpleBar>
             </div>
           )}
@@ -121,9 +132,9 @@ const Dropdown = ({ index, title, project }) => {
               <SimpleBar
                 className="simplebar-component"
                 autoHide={false}
-                style={{ width: "100%", height: `${getHeight() - 20}px` }}
+                style={{ width: "100%", height: `${getHeight()}px` }}
               >
-                <div>{project.description}</div>
+                <div ref={contentRef}>{project.description}</div>
               </SimpleBar>
             </div>
           )}
@@ -133,9 +144,9 @@ const Dropdown = ({ index, title, project }) => {
               <SimpleBar
                 className="simplebar-component"
                 autoHide={false}
-                style={{ width: "100%", height: `${getHeight() - 20}px` }}
+                style={{ width: "100%", height: `${getHeight()}px` }}
               >
-                {project.process}
+                <div ref={contentRef}>{project.process}</div>
               </SimpleBar>
             </div>
           )}
@@ -145,4 +156,4 @@ const Dropdown = ({ index, title, project }) => {
   );
 };
 
-export default Dropdown;
+export default withRouter(Dropdown);

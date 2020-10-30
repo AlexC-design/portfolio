@@ -31,6 +31,8 @@
 .about-page .top-side .profile-picture {
   width: 400px;
   height: 400px;
+  min-width: 400px;
+  min-height: 400px;
   border-radius: 2px;
   border: solid 1px white;
 }
@@ -58,6 +60,7 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    margin-top: 10px;
   }
   .about-page .top-side .about-text {
     text-align: center;
@@ -70,6 +73,8 @@
   .about-page .top-side .profile-picture {
     width: 300px;
     height: 300px;
+    min-width: 300px;
+    min-height: 300px;
   }
   .about-page .top-side .my-name {
     font-size: 30px;
@@ -83,6 +88,8 @@
   .about-page .top-side .profile-picture {
     width: 250px;
     height: 250px;
+    min-width: 250px;
+    min-height: 250px;
   }
   .about-page .top-side .my-name {
     font-size: 25px;

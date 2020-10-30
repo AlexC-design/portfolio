@@ -142,8 +142,10 @@ a {
   right: 3px;
 
   .simplebar-scrollbar {
-    transition: all 0s linear;
+    transition: all 0s linear !important;
     overflow: visible;
+    opacity: 0.7;
+
     &:before {
       background-color: color(accent);
       opacity: 100%;
@@ -154,7 +156,7 @@ a {
 
 .text-container {
   .simplebar-track.simplebar-vertical {
-    right: -17px;
+    right: 10px;
   }
 }
 

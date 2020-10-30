@@ -8,7 +8,7 @@
   transition: all 0.5s ease-in-out;
 
   * {
-    transition: all 0.5s ease-in-out, opacity 0.2s linear;
+    transition: all 0.5s ease-in-out, opacity 0.2s linear, font-size 0s linear !important;
   }
 
   .dropdown-header {
@@ -33,16 +33,28 @@
     overflow: hidden;
     text-align: left;
     height: 0;
+    max-height: calc(100vh - 400px);
 
     .dropdown-body-content {
-      padding: 10px 40px;
+      .simplebar-content {
+        padding: 10px 40px !important;
+      }
       opacity: 0;
 
       .text-container {
-        max-height: calc(100vh - 400px);
+        .simplebar-component {
+          max-height: calc(100vh - 400px);
+        }
+      }
+    }
+    @include width850 {
+      max-height: calc(50vh - 140px);
 
-        @include width850 {
-          max-height: calc(50vh - 180px);
+      .dropdown-body-content {
+        .text-container {
+          .simplebar-component {
+            max-height: calc(50vh - 140px);
+          }
         }
       }
     }

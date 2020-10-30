@@ -180,9 +180,10 @@ a:active {
 }
 
 .simplebar-track.simplebar-vertical .simplebar-scrollbar {
-  -webkit-transition: all 0s linear;
-  transition: all 0s linear;
+  -webkit-transition: all 0s linear !important;
+  transition: all 0s linear !important;
   overflow: visible;
+  opacity: 0.7;
 }
 
 .simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
@@ -192,7 +193,7 @@ a:active {
 }
 
 .text-container .simplebar-track.simplebar-vertical {
-  right: -17px;
+  right: 10px;
 }
 
 .spin {

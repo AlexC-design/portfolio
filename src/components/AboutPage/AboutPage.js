@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import profilePicture from "../../assets/images/profile-picture.jpg";
+import profilePicture from "../../assets/images/profile-picture2.jpg";
 import Footer from "../Footer/Footer";
 import { ToolsIcons } from "../ToolsIcons/ToolsIcons";
 import "./css/about-page.css";

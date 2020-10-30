@@ -4,6 +4,7 @@ import "./css/project-page.css";
 import arrowRight from "../../assets/svg/arrow-right.svg";
 import Dropdown from "./Dropdown/Dropdown";
 import { projects } from "../../services/projects";
+import { useSelector } from "react-redux";
 
 const ProjectPage = ({ history, location }) => {
   const dropdowns = ["Personal project", "Description", "Process"];
@@ -11,6 +12,10 @@ const ProjectPage = ({ history, location }) => {
   const currentProject = projects.find(
     project => project.name === location.hash.replace(/#/g, "")
   );
+
+  const { fullScreen } = useSelector(state => ({
+    fullScreen: state.carousel.fullScreen
+  }));
 
   const currentIndex = () => {
     return projectList.findIndex(project => project === currentProject.name);
@@ -38,7 +43,7 @@ const ProjectPage = ({ history, location }) => {
   };
 
   return (
-    <div className="project-page">
+    <div className={`project-page ${fullScreen ? "full-screen" : ""}`}>
       <Carousel />
 
       <div className="dropdowns">
