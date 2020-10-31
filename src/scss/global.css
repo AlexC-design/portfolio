@@ -188,7 +188,7 @@ a:active {
 
 .simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
   background-color: #b6bdff;
-  opacity: 100%;
+  opacity: 1;
   width: 5px;
 }
 
