@@ -2,7 +2,9 @@ import React from "react";
 import { withRouter } from "react-router";
 import "./css/project-card.css";
 
-const ProjectCard = ({ history, img, title, type, tech, description, name }) => {
+const ProjectCard = ({ history, img, project }) => {
+  const { title, type, tech, description, name } = project;
+
   const handleClick = () => {
     history.push(`/project#${name}`);
   };

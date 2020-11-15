@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import profilePicture from "../../assets/images/profile-picture2.jpg";
 import Footer from "../Footer/Footer";
 import { ToolsIcons } from "../ToolsIcons/ToolsIcons";
 import "./css/about-page.css";
@@ -37,7 +36,13 @@ const AboutPage = () => {
     <div className="page about-page">
       <div className="container">
         <div className="top-side">
-          <img className="profile-picture" src={profilePicture} alt="" />
+          <img
+            className="profile-picture"
+            src={
+              "https://omperiap.sirv.com/portfolio/profile-picture/profile-picture.jpg"
+            }
+            alt=""
+          />
           <div className="about-text">
             <h1 className="my-name text-bold">Alexandru Ciobotaru</h1>
             <p className="subtitle">Web Developer and Designer</p>
@@ -62,7 +67,11 @@ const AboutPage = () => {
             <p>
               If you want to check out some of my previous work as a digital
               artist, please visit:{" "}
-              <a href="https://allexc.crevado.com/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://allexc.crevado.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 allexc.crevado.com
               </a>
             </p>

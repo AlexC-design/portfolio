@@ -42,9 +42,14 @@ const ProjectPage = ({ history, location }) => {
     history.push(`/project#${projectList[prevIndex()]}`);
   };
 
+  const imageSrcs = currentProject.images.map(
+    image =>
+      `https://omperiap.sirv.com/portfolio/${currentProject.name}/${image}.png`
+  );
+
   return (
     <div className={`project-page ${fullScreen ? "full-screen" : ""}`}>
-      <Carousel />
+      <Carousel imageSrcs={imageSrcs} />
 
       <div className="dropdowns">
         {dropdowns.map((dropdown, index) => (

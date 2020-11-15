@@ -1,25 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Footer from "../Footer/Footer";
 import ProjectCard from "../ProjectCard/ProjectCard";
 import { ToolsIcons } from "../ToolsIcons/ToolsIcons";
 import { projects } from "../../services/projects";
-import importAll from "../../services/importAll";
 import "./css/home-page.css";
 
 const HomePage = () => {
-  const [tmbs, setTmbs] = useState({});
-
-  const importImages = async () => {
-    const importedImages = importAll(
-      require.context("../../assets/images/tmbs", false, /\.(png|jpe?g)$/)
-    );
-    setTmbs(importedImages);
-  };
-
-  useEffect(() => {
-    importImages();
-  }, []);
-
   return (
     <div className="page">
       <div className="container">
@@ -49,13 +35,8 @@ const HomePage = () => {
           {projects.map(project => {
             return (
               <ProjectCard
-                img={tmbs[`${project.name}.jpg`]}
-                name={project.name}
-                title={project.title}
-                type={project.type}
-                tech={project.tech}
-                key={project.name}
-                description={project.description}
+                img={`https://omperiap.sirv.com/portfolio/tmbs/${project.name}.jpg`}
+                project={project}
               />
             );
           })}

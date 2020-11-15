@@ -4,7 +4,6 @@ import play from "../../../assets/svg/play.svg";
 import pause from "../../../assets/svg/pause.svg";
 import fullScreenButton from "../../../assets/svg/full-screen.svg";
 import halfScreenButton from "../../../assets/svg/half-screen.svg";
-import importAll from "../../../services/importAll";
 import SimpleBar from "simplebar-react";
 import "simplebar/src/simplebar.css";
 import "./css/carousel.css";
@@ -15,8 +14,7 @@ import {
   setFullScreenOff
 } from "../../../store/state/carousel";
 
-const Carousel = ({ location }) => {
-  const [images, setImages] = useState({});
+const Carousel = ({ location, imageSrcs }) => {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const [singleImage, setSingleImage] = useState(false);
@@ -34,7 +32,7 @@ const Carousel = ({ location }) => {
   };
 
   const nextImage = () => {
-    if (activeImageIndex === Object.keys(images).length - 1) {
+    if (activeImageIndex === imageSrcs.length - 1) {
       setActiveImageIndex(0);
     } else {
       setActiveImageIndex(activeImageIndex + 1);
@@ -42,7 +40,7 @@ const Carousel = ({ location }) => {
   };
   const prevImage = () => {
     if (activeImageIndex === 0) {
-      setActiveImageIndex(Object.keys(images).length - 1);
+      setActiveImageIndex(imageSrcs.length - 1);
     } else {
       setActiveImageIndex(activeImageIndex - 1);
     }
@@ -63,8 +61,8 @@ const Carousel = ({ location }) => {
 
   // =============== LOAD NEW IMAGES ===============
   useEffect(() => {
-    const importedImages = importImages(location.hash.replace(/#/g, ""));
-    setImages(importedImages);
+    console.log(imageSrcs);
+    // setImages();
 
     imgContainer.current.classList.remove("fade-in-delayed");
     ctrlsRef.current.classList.remove("fade-in-delayed");
@@ -78,14 +76,14 @@ const Carousel = ({ location }) => {
 
   // =============== UPDATE CAROUSEL TYPE ===============
   useEffect(() => {
-    if (Object.keys(images).length === 1) {
+    if (imageSrcs.length === 1) {
       setSingleImage(true);
       setPaused(true);
     } else {
       setSingleImage(false);
       setPaused(false);
     }
-  }, [images]);
+  }, [imageSrcs]);
 
   // =============== CYCLE IMAGES ===============
   useEffect(() => {
@@ -104,73 +102,7 @@ const Carousel = ({ location }) => {
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [images, activeImageIndex, paused, location, singleImage]);
-
-  const importImages = project => {
-    switch (project) {
-      case "movie-cluster":
-        return importAll(
-          require.context(
-            "../../../assets/images/movie-cluster",
-            false,
-            /\.(png|jpe?g)$/
-          )
-        );
-
-      case "fin":
-        return importAll(
-          require.context("../../../assets/images/fin", false, /\.(png|jpe?g)$/)
-        );
-
-      case "beacon":
-        return importAll(
-          require.context(
-            "../../../assets/images/beacon",
-            false,
-            /\.(png|jpe?g)$/
-          )
-        );
-
-      case "bug-tracker":
-        return importAll(
-          require.context(
-            "../../../assets/images/bug-tracker",
-            false,
-            /\.(png|jpe?g)$/
-          )
-        );
-
-      case "old-folio":
-        return importAll(
-          require.context(
-            "../../../assets/images/old-folio",
-            false,
-            /\.(png|jpe?g)$/
-          )
-        );
-
-      case "new-folio":
-        return importAll(
-          require.context(
-            "../../../assets/images/new-folio",
-            false,
-            /\.(png|jpe?g)$/
-          )
-        );
-
-      case "ui-components":
-        return importAll(
-          require.context(
-            "../../../assets/images/ui-components",
-            false,
-            /\.(png|jpe?g)$/
-          )
-        );
-
-      default:
-        return [];
-    }
-  };
+  }, [imageSrcs, activeImageIndex, paused, location, singleImage]);
 
   return (
     <div
@@ -188,13 +120,13 @@ const Carousel = ({ location }) => {
           autoHide={false}
           style={{ width: "100%", height: "100%" }}
         >
-          {Object.keys(images).map((image, index) => (
+          {imageSrcs.map((src, index) => (
             <img
               className={`carousel-image ${
                 activeImageIndex === index && "active"
               }`}
-              src={images[image]}
-              key={`${images[image]}`}
+              src={src}
+              key={`${src}`}
               alt=""
             />
           ))}
@@ -208,12 +140,12 @@ const Carousel = ({ location }) => {
           alt=""
           onClick={prevImage}
         />
-        {Object.keys(images).map((image, index) => {
+        {imageSrcs.map((src, index) => {
           return (
             <div
               className={`dot ${activeImageIndex === index && "active"}`}
               onClick={() => setActiveImage(index)}
-              key={`${images[image]}`}
+              key={`${src}`}
             />
           );
         })}

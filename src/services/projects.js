@@ -10,6 +10,7 @@ export const projects = [
       "Designed and built a responsive SPA using React and Redux, that allows you to browse movies by categories, genres, search for specific movies, view details about movies or save them to your list.",
     link: "https://moviecluster.now.sh/",
     code: "https://github.com/AlexC-design/movie-cluster-r",
+    images: [1, 2, 3, 4, 5, 6],
     process: (
       <>
         <p>This is a re-make of a similar project I've done in the past.</p>
@@ -68,6 +69,7 @@ export const projects = [
       "Frontend personal finance application, where you can view payments breakdown and history charts, send/receive payments, manage cards, change payment methods and more.",
     link: "https://fin-frontend.now.sh/",
     code: "https://github.com/AlexC-design/fin",
+    images: [1, 2, 3, 4, 5, 6, 7],
     process: (
       <>
         <p>
@@ -133,6 +135,7 @@ export const projects = [
       "Designed and built a responsive website in React, focusing mainly on visual design, vector illustrations and CSS animations.",
     link: "https://beacon-logistics.now.sh/",
     code: "https://github.com/AlexC-design/beacon",
+    images: [1, 2, 3, 4, 5],
     process: (
       <>
         <p>
@@ -173,6 +176,7 @@ export const projects = [
       "Full stack application built using the MERN stack (Mongo, Express, React, Node). Created a system that contributes to the development of a project by managing and maintaining a list of development related issues.",
     link: "https://bug-tracker-client.now.sh/",
     code: "https://github.com/AlexC-design/bug-tracker",
+    images: [1, 2, 3, 4, 5, 6],
     process: (
       <>
         <p>
@@ -246,6 +250,7 @@ export const projects = [
       "Portfolio website for showcasing my latest projects. Designed in Figma, built with React and Redux.",
     link: null,
     code: "testcodelink",
+    images: [1, 2, 3],
     process: (
       <>
         <p>
@@ -305,6 +310,7 @@ export const projects = [
       "The previous version of my protfolio website, built in React.",
     link: "testlink",
     code: "testcodelink",
+    images: [1, 2, 3, 4],
     process: (
       <>
         <p>
@@ -353,6 +359,7 @@ export const projects = [
     description: "Creating a responsive design for various common UI elements.",
     link: null,
     code: null,
+    images: [1],
     process: (
       <>
         <p>
