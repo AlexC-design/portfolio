@@ -61,9 +61,6 @@ const Carousel = ({ location, imageSrcs }) => {
 
   // =============== LOAD NEW IMAGES ===============
   useEffect(() => {
-    console.log(imageSrcs);
-    // setImages();
-
     imgContainer.current.classList.remove("fade-in-delayed");
     ctrlsRef.current.classList.remove("fade-in-delayed");
     setTimeout(() => {

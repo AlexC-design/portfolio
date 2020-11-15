@@ -318,4 +318,45 @@ a:active {
             transform: translate(-50%, -50%);
   }
 }
+
+.link-animation {
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-animation: link-animation 0.4s 0.5s ease-out forwards;
+          animation: link-animation 0.4s 0.5s ease-out forwards;
+}
+
+@-webkit-keyframes link-animation {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes link-animation {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
 /*# sourceMappingURL=global.css.map */

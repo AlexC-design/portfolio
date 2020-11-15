@@ -37,6 +37,7 @@ const HomePage = () => {
               <ProjectCard
                 img={`https://omperiap.sirv.com/portfolio/tmbs/${project.name}.jpg`}
                 project={project}
+                key={project.name}
               />
             );
           })}

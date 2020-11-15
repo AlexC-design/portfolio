@@ -249,7 +249,7 @@ export const projects = [
     description:
       "Portfolio website for showcasing my latest projects. Designed in Figma, built with React and Redux.",
     link: null,
-    code: "testcodelink",
+    code: "https://github.com/AlexC-design/portfolio",
     images: [1, 2, 3],
     process: (
       <>
@@ -308,8 +308,8 @@ export const projects = [
     tech: "React, JavaScript, HTML/CSS, Sass, Figma, Photoshop",
     description:
       "The previous version of my protfolio website, built in React.",
-    link: "testlink",
-    code: "testcodelink",
+    link: "https://alexc.design/",
+    code: "https://github.com/AlexC-design/alexc.design",
     images: [1, 2, 3, 4],
     process: (
       <>

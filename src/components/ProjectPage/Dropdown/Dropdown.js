@@ -11,7 +11,8 @@ const Dropdown = ({ index, title, project }) => {
   const [open, setOpen] = useState(false);
   const [opening, setOpening] = useState(false);
   const [closing, setClosing] = useState(false);
-  const contentRef = useRef();
+  const contentRef = useRef(null);
+  const linkRef = useRef(null);
 
   const dispatch = useDispatch();
   const { openDropdownIndex } = useSelector(state => ({
@@ -70,6 +71,15 @@ const Dropdown = ({ index, title, project }) => {
     dispatch(setOpenDropdownIndex(0));
   }, [project, dispatch]);
 
+  useEffect(() => {
+    if (index === 0 && project.link) {
+      linkRef.current.classList.remove("link-animation");
+      setTimeout(() => {
+        linkRef.current.classList.add("link-animation");
+      });
+    }
+  }, [project]);
+
   return (
     <div className={`dropdown ${open ? "open" : ""}`}>
       <div className="dropdown-header" onClick={handleClick}>
@@ -97,14 +107,19 @@ const Dropdown = ({ index, title, project }) => {
                   {project.link && (
                     <div className="mb">
                       <div>Live version:</div>
-                      <a
-                        className="primary-link"
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <div
+                        className="link-container link-animation"
+                        ref={linkRef}
                       >
-                        {project.link}
-                      </a>
+                        <a
+                          className="primary-link"
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {project.link}
+                        </a>
+                      </div>
                     </div>
                   )}
                   {project.code && (

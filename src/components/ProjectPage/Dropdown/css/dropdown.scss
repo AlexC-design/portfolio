@@ -42,6 +42,10 @@
       opacity: 0;
 
       .text-container {
+        .link-container {
+          opacity: 0;
+        }
+
         .simplebar-component {
           max-height: calc(100vh - 400px);
         }

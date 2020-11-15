@@ -72,6 +72,10 @@
   padding: 10px 40px !important;
 }
 
+.dropdown .dropdown-body .dropdown-body-content .text-container .link-container {
+  opacity: 0;
+}
+
 .dropdown .dropdown-body .dropdown-body-content .text-container .simplebar-component {
   max-height: calc(100vh - 400px);
 }
