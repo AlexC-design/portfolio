@@ -10,7 +10,7 @@ const ProjectCard = ({ history, img, project }) => {
   };
 
   const formatTech = tech => {
-    return tech.replace(/,/g, " ●");
+    return tech.replace(/,/g, " •");
   };
 
   return (
