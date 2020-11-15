@@ -10,7 +10,7 @@ const ProjectCard = ({ history, img, project }) => {
   };
 
   const formatTech = tech => {
-    return tech.replace(/,/g, " ○");
+    return tech.replace(/,/g, " ●");
   };
 
   return (
@@ -29,7 +29,7 @@ const ProjectCard = ({ history, img, project }) => {
         <br className="hide-mobile" />
         <p className="text-bold hide-mobile">Technologies</p>
         <p className="text-thin hide-mobile">{tech}</p>
-        <p className="text-bold show-mobile ">{formatTech(tech)} </p>
+        <p className="text-bold show-mobile">{formatTech(tech)}</p>
         <br />
         <br />
         <p className="text-bold hide-mobile">Description</p>
