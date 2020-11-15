@@ -31,7 +31,7 @@ const ProjectCard = ({ history, img, project }) => {
         <p className="text-thin hide-mobile">{tech}</p>
         <p className="text-bold show-mobile">{formatTech(tech)}</p>
         <br />
-        <br />
+        <br className="hide-mobile" />
         <p className="text-bold hide-mobile">Description</p>
         <p className="text-thin">{description}</p>
 
