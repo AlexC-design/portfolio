@@ -78,7 +78,7 @@ const Dropdown = ({ index, title, project }) => {
         linkRef.current.classList.add("link-animation");
       });
     }
-  }, [project]);
+  }, [project, index]);
 
   return (
     <div className={`dropdown ${open ? "open" : ""}`}>
