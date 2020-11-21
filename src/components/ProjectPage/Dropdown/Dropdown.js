@@ -106,7 +106,7 @@ const Dropdown = ({ index, title, project }) => {
                 <div ref={contentRef}>
                   {project.link && (
                     <div className="mb">
-                      <div>Live version:</div>
+                      <div>Link to website:</div>
                       <div
                         className="link-container link-animation"
                         ref={linkRef}
