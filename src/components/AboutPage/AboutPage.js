@@ -60,7 +60,7 @@ const AboutPage = () => {
             <br />
             <p>
               I've studied Computer Science at the University of Bucharest, and
-              I have focusing mainly on Web Technologies and Frameworks for the
+              I have been focusing mainly on Web Technologies and Frameworks for the
               last two years.
             </p>
             <br />

@@ -7,7 +7,7 @@ export const projects = [
     type: "WEB APP",
     tech: "React, Redux, Redux-thunk, React-router, Axios, TMDB API, Figma",
     description:
-      "Designed and built a responsive SPA using React and Redux, that allows you to browse movies by categories, genres, search for specific movies, view details about movies or save them to your list.",
+      "Designed and built a responsive SPA using React and Redux, that allows you to browse movies by categories, genres, search for specific movies, view details about movies, or save them to your list.",
     link: "https://moviecluster.now.sh/",
     code: "https://github.com/AlexC-design/movie-cluster-r",
     images: [1, 2, 3, 4, 5, 6],
@@ -36,7 +36,7 @@ export const projects = [
           Once I found something that I was happy with, I started focusing on
           the structure of the website. I wanted to do something similar to the
           previous version, but improve the UX based on the feedback I've
-          received over the time from people who have used the website, and from
+          received over time from people who have used the website, and from
           using it myself.
         </p>
         <br />
@@ -44,17 +44,16 @@ export const projects = [
           With the high fidelity wireframes ready, I began coding the website in
           React, working from big to small, first laying out the routing, main
           structure of the pages, and connecting them to the tMDB API, then
-          building each of the pages features and functionality, focusing on
+          building each of the page's features and functionality, focusing on
           user interaction as this is something I really enjoy doing.
         </p>
         <br />
         <p>
-          I really like how the website turned out and I had a lot of fun
-          working on this project. Given that I was already familiar with the
-          API and more experienced in React than the first time I attempted it,
-          I was really able to focus more on the design and interactions and
-          produce a much better result in less than half the time it took me the
-          first time.
+          I like how the website turned out and I had a lot of fun working on
+          this project. Given that I was already familiar with the API and more
+          experienced in React than the first time I attempted it, I was able to
+          focus more on the design and interactions and produce a much better
+          result in less than half the time it took me the first time.
         </p>
         <br />
       </>
@@ -66,7 +65,7 @@ export const projects = [
     type: "WEB APP",
     tech: "React, Redux, React-router, Redux-persist, Chart.js, Figma",
     description:
-      "Frontend personal finance application, where you can view payments breakdown and history charts, send/receive payments, manage cards, change payment methods and more.",
+      "Frontend personal finance application, where you can view payments breakdown and history charts, send/receive payments, manage cards, change payment methods, and more.",
     link: "https://fin-frontend.now.sh/",
     code: "https://github.com/AlexC-design/fin",
     images: [1, 2, 3, 4, 5, 6, 7],
@@ -79,14 +78,14 @@ export const projects = [
         </p>
         <br />
         <p>
-          I started out by researching apps such as Revolut and Monzo, which are
+          I started by researching apps such as Revolut and Monzo, which are
           apps that I use myself, as well as other similar financial
           applications that I have heard of.
         </p>
         <br />
         <p>
           Once I had an idea about the features I want to include in my app, I
-          created some mid fidelity wireframes in Figma, to figure out the
+          created some mid-fidelity wireframes in Figma, to figure out the
           structure of the application.
         </p>
         <br />
@@ -110,17 +109,17 @@ export const projects = [
           app.
         </p>
         <p>
-          Once I started coding the application I realised it might be a bit too
+          Once I started coding the application I realized it might be a bit too
           much to finalize it within the timeframe that I initially had in mind,
-          but I did not want to exclude any of them, so I had to sacrifice from
-          the time spent on the design and interactions to be able to finish it
-          in a timely manner.
+          but I did not want to exclude any of them, so I had to sacrifice part
+          of the time spent on the design and interactions to be able to finish
+          it in a timely manner.
         </p>
         <br />
         <p>
           All in all, I am happy with the result and it was a really good
           experience as not only I've learned a lot of new stuff, but it also
-          helped me improve my time manangement and prioritisation abilities.
+          helped me improve my time management and prioritization abilities.
         </p>
         <br />
       </>
@@ -132,7 +131,7 @@ export const projects = [
     type: "WEB APP",
     tech: "React, Redux, React-router, Figma, Photoshop",
     description:
-      "Designed and built a responsive website in React, focusing mainly on visual design, vector illustrations and CSS animations.",
+      "Designed and built a responsive website in React, focusing mainly on visual design, vector illustrations, and CSS animations.",
     link: "https://beacon-logistics.now.sh/",
     code: "https://github.com/AlexC-design/beacon",
     images: [1, 2, 3, 4, 5],
@@ -173,7 +172,7 @@ export const projects = [
     tech:
       "React, Redux, Redux-thunk, React-router, React-dnd, Redux-saga, Redux-persist, Axios",
     description:
-      "Full stack application built using the MERN stack (Mongo, Express, React, Node). Created a system that contributes to the development of a project by managing and maintaining a list of development related issues.",
+      "Full-stack application built using the MERN stack (Mongo, Express, React, Node). Created a system that contributes to the development of a project by managing and maintaining a list of development related issues.",
     link: "https://bug-tracker-client.now.sh/",
     code: "https://github.com/AlexC-design/bug-tracker",
     images: [1, 2, 3, 4, 5, 6],
@@ -187,7 +186,7 @@ export const projects = [
         <p>
           I started by sketching out a rough idea of the features I wanted to
           include in the app, such as user authentication, the project
-          management screen, users and tasks, and all the individual aspecs of
+          management screen, users and tasks, and all the individual aspects of
           each feature.
         </p>
         <p>
@@ -196,17 +195,17 @@ export const projects = [
         </p>
         <br />
         <p>
-          Once I had the main structure of the app layed out, I started working
+          Once I had the main structure of the app laid out, I started working
           on the high fidelity designs for the UI and then implemented them.
         </p>
         <br />
         <p>
           I started with the user authentication as this was what I considered
-          to be the hardest part and it also gave me a good staring point for
+          to be the hardest part and it also gave me a good starting point for
           building out the backend.
         </p>
         <p>
-          It was quite challenging, because on top of the fact that I was doing
+          It was quite challenging because, on top of the fact that I was doing
           backend development for the first time, I've also decided to use
           redux-saga for handling asynchronous actions on the front end, which
           was a noticeably more complex library than the redux-thunk I was used
@@ -215,7 +214,7 @@ export const projects = [
         <br />
         <p>
           This was the most challenging feature I had to implement on a website
-          until then and it took a lot of trial and error, but in the end I
+          until then and it took a lot of trial and error, but in the end, I
           managed to do it and I've learned a lot of valuable lessons along the
           way as well.
         </p>
@@ -227,13 +226,13 @@ export const projects = [
         </p>
         <p>
           I am very happy with the result and with the fact that I've expanded
-          my knowledge into backend developement, but I have to admit, I am more
-          interested in fronted, bulding the UI designs, user interactions and
+          my knowledge into backend development, but I have to admit, I am more
+          interested in fronted, building the UI designs, user interactions, and
           visuals.
         </p>
         <br />
         <p>
-          Nevertheless, I think it was a worthwile experience and the knowledge
+          Nevertheless, I think it was a worthwhile experience and the knowledge
           I've gained is certainly going to be beneficial when working on the
           frontend as well.
         </p>
@@ -254,32 +253,32 @@ export const projects = [
     process: (
       <>
         <p>
-          This was a re-make of my previous protfolio website. Based on the
-          feedback I've recieved, I decided it could use a lot of improvements,
-          not only in terms of visual design, but also in regards to how the
+          This was a re-make of my previous portfolio website. Based on the
+          feedback I've received, I decided it could use a lot of improvements,
+          not only in terms of visual design but also in regards to how the
           projects are presented.
         </p>
         <br />
         <p>
           I decided to play it safe on this one. I tried to keep it simple and
-          only use technologies I was familiar with, so that I can focus more on
-          design and UX, and to make sure the quality of the website is as high
+          only use technologies I was familiar with so that I can focus more on
+          design and UX, and make sure the quality of the website is as high
           as possible.
         </p>
         <br />
         <p>
           Like a lot of my projects, I started by sketching out different
-          layouts in Figma and once I found something I was happy with I began
+          layouts in Figma, and once I found something I was happy with I began
           working on the visual design.
         </p>
         <br />
         <p>
-          Once the high fidelity wireframes were ready I started building it out
+          Once the high-fidelity wireframes were ready I started building it out
           in React. The design I've chosen for the most complex page, the
           project page, happened to have an image carousel and a dropdowns
-          section, which coincidentally are two visual elements which I've had a
-          lot of experince building and working with lately, so everything went
-          really smmootly.
+          section, which coincidentally are two visual elements that I've had a
+          lot of experience building and working with lately, so everything went
+          really smoothly.
         </p>
         <br />
         <p>
@@ -333,8 +332,8 @@ export const projects = [
         <p>
           One of the parts that I've spent the most time on, was making the
           graphics for the project cards and the project page hero section, as
-          well as the animated GIFs in some of the projects descriptions, which
-          in hindsight was probably something I shouldn't have prioritised.
+          well as the animated GIFs in some of the project's descriptions, which
+          in hindsight was probably something I shouldn't have prioritized.
         </p>
         <p>
           I feel that it took way too much effort compared to how little impact
@@ -369,18 +368,18 @@ export const projects = [
         <br />
         <p>
           The purpose was to build a set of cohesive UI elements and think about
-          the different states they could have troughout the website and how to
-          best depict them using design priciples.
+          the different states they could have throughout the website and how to
+          best depict them using design principles.
         </p>
         <br />
         <p>
           I started by giving myself a set of restrictions in terms of color and
-          general syling that I had to apply to all of the elements to keep them
+          general styling that I had to apply to all of the elements to keep them
           consistent.
         </p>
         <p>
           Then I just picked some of the more common UI elements I could think
-          of and started designging them to fit my decided structure. All while
+          of and started designing them to fit my decided structure. All while
           keeping in mind the responsiveness aspect of these elements and how
           they would look on a mobile device as well as on desktop.
         </p>
