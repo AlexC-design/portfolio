@@ -307,7 +307,7 @@ export const projects = [
     tech: "React, JavaScript, HTML/CSS, Sass, Figma, Photoshop",
     description:
       "The previous version of my protfolio website, built in React.",
-    link: "https://alexc.design/",
+    link: null,
     code: "https://github.com/AlexC-design/alexc.design",
     images: [1, 2, 3, 4],
     process: (
