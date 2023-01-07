@@ -13,7 +13,7 @@ export const projects = [
     images: [1, 2, 3, 4, 5, 6],
     process: (
       <>
-        <p>This is a re-make of a similar project I've done in the past.</p>
+        <p>This is a remake of a similar project I've done in the past.</p>
         <p>
           I liked the original idea of the app, but I wasn't very happy with the
           end result, as I had built the original app when I was still new to my
@@ -28,8 +28,8 @@ export const projects = [
         <p>
           I already had a pretty good idea of what I want to make, and I was
           already familiar with the tMDB API, so I started this one out with
-          some design exploration in Figma for the styling of the UI, as this
-          was one of the main areas I wanted to improve.
+          some design exploration in Figma for the UI, as this was one of the
+          main areas I wanted to improve.
         </p>
         <br />
         <p>
@@ -42,10 +42,11 @@ export const projects = [
         <br />
         <p>
           With the high fidelity wireframes ready, I began coding the website in
-          React, working from big to small, first laying out the routing, main
+          React, working big to small, first laying out the routing, main
           structure of the pages, and connecting them to the tMDB API, then
-          building each of the page's features and functionality, focusing on
-          user interaction as this is something I really enjoy doing.
+          building each of the page's features and functionality, paying special
+          attention to user interaction as this is something I really enjoy
+          focusing on.
         </p>
         <br />
         <p>
@@ -53,7 +54,8 @@ export const projects = [
           this project. Given that I was already familiar with the API and more
           experienced in React than the first time I attempted it, I was able to
           focus more on the design and interactions and produce a much better
-          result in less than half the time it took me the first time.
+          result in less than half the time it took took to build the previous
+          project.
         </p>
         <br />
       </>
@@ -166,81 +168,6 @@ export const projects = [
     )
   },
   {
-    name: "bug-tracker",
-    title: "Bug Tracker",
-    type: "WEB APP",
-    tech:
-      "React, Redux, Redux-thunk, React-router, React-dnd, Redux-saga, Redux-persist, Axios",
-    description:
-      "Full-stack application built using the MERN stack (Mongo, Express, React, Node). Created a system that contributes to the development of a project by managing and maintaining a list of development related issues.",
-    link: "https://bug-tracker-client.now.sh/",
-    code: "https://github.com/AlexC-design/bug-tracker",
-    images: [1, 2, 3, 4, 5, 6],
-    process: (
-      <>
-        <p>
-          I built this project to learn more about backend APIs and databases,
-          in order to get a more thorough understanding of the entire process of
-          web development.
-        </p>
-        <p>
-          I started by sketching out a rough idea of the features I wanted to
-          include in the app, such as user authentication, the project
-          management screen, users and tasks, and all the individual aspects of
-          each feature.
-        </p>
-        <p>
-          I then moved into Figma and built the wireframes for all of the
-          screens.
-        </p>
-        <br />
-        <p>
-          Once I had the main structure of the app laid out, I started working
-          on the high fidelity designs for the UI and then implemented them.
-        </p>
-        <br />
-        <p>
-          I started with the user authentication as this was what I considered
-          to be the hardest part and it also gave me a good starting point for
-          building out the backend.
-        </p>
-        <p>
-          It was quite challenging because, on top of the fact that I was doing
-          backend development for the first time, I've also decided to use
-          redux-saga for handling asynchronous actions on the front end, which
-          was a noticeably more complex library than the redux-thunk I was used
-          to.
-        </p>
-        <br />
-        <p>
-          This was the most challenging feature I had to implement on a website
-          until then and it took a lot of trial and error, but in the end, I
-          managed to do it and I've learned a lot of valuable lessons along the
-          way as well.
-        </p>
-        <br />
-        <p>
-          After I got the hang of it, the rest of the features were a lot easier
-          to implement. This was still the project that I've spent the most time
-          on.
-        </p>
-        <p>
-          I am very happy with the result and with the fact that I've expanded
-          my knowledge into backend development, but I have to admit, I am more
-          interested in fronted, building the UI designs, user interactions, and
-          visuals.
-        </p>
-        <br />
-        <p>
-          Nevertheless, I think it was a worthwhile experience and the knowledge
-          I've gained is certainly going to be beneficial when working on the
-          frontend as well.
-        </p>
-        <br />
-      </>
-    )
-  },
-  {
     name: "new-folio",
     title: "Current portfolio",
     type: "WEB APP",
@@ -262,8 +189,8 @@ export const projects = [
         <p>
           I decided to play it safe on this one. I tried to keep it simple and
           only use technologies I was familiar with so that I can focus more on
-          design and UX, and make sure the quality of the website is as high
-          as possible.
+          design and UX, and make sure the quality of the website is as high as
+          possible.
         </p>
         <br />
         <p>
@@ -362,7 +289,7 @@ export const projects = [
     process: (
       <>
         <p>
-          This was just a short project to do some design exploration and to
+          This was just a short project to do some design exploration and
           practice my design skills.
         </p>
         <br />
@@ -374,8 +301,8 @@ export const projects = [
         <br />
         <p>
           I started by giving myself a set of restrictions in terms of color and
-          general styling that I had to apply to all of the elements to keep them
-          consistent.
+          general styling that I had to apply to all of the elements to keep
+          them consistent.
         </p>
         <p>
           Then I just picked some of the more common UI elements I could think
@@ -385,9 +312,8 @@ export const projects = [
         </p>
         <br />
         <p>
-          It was a fun little project and I plan on doing more of these in the
-          future. I think it's a good way of keeping your skills sharp and
-          experimenting with new designs.
+          It was a fun little project and I think it's a good way of keeping
+          your skills sharp and experimenting with new designs.
         </p>
         <br />
       </>
